@@ -11,21 +11,21 @@ export class TwolinechartComponent  {
 
 
   // Array of different segments in chart
-  lineChartData: ChartDataSets[] = [
+  lineChartsData: ChartDataSets[] = [
     { data: [65, 59, 80, 81, 56,100,55], label: 'Dataset 1' },
      { data: [28, 48, 40, 19, 86, 27, 90], label: 'Dataset 2' }
   ];
 
   //Labels shown on the x-axis
-  lineChartLabels: Label[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  lineChartsLabels: Label[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
   // Define chart options
-  lineChartOptions: ChartOptions = {
+  lineChartsOptions: ChartOptions = {
     responsive: true
   };
 
   // Define colors of chart segments
-  lineChartColors: Color[] = [
+  lineChartsColors: Color[] = [
 
     { // dark grey
       backgroundColor: 'rgba(77,83,96,0.2)',
@@ -38,12 +38,12 @@ export class TwolinechartComponent  {
   ];
 
   // Set true to show legends
-  lineChartLegend = true;
+  lineChartsLegend = true;
 
   // Define type of chart
-  lineChartType = 'line';
+  lineChartsType = 'line';
 
-  lineChartPlugins = [];
+  lineChartsPlugins = [];
 
   // events
   chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {

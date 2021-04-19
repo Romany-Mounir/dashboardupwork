@@ -6,9 +6,6 @@ import { AppComponent } from './app.component';
 // import { HeaderComponent } from './components/header/header.component';
 // import { FooterComponent } from './components/footer/footer/footer.component';
 // import { SidebarComponent } from './components/sidebar/sidebar/sidebar.component';
-// import { SigninComponent } from './pages/external/signin/signin/signin.component';
-// import { SignupComponent } from './pages/external/signup/signup/signup.component';
-// import { ResetPaswordComponent } from './pages/external/reset-pasword/reset-pasword.component';
 // import { ErrorPageComponent } from './pages/external/error-page/error-page.component';
 // import { OverviewComponent } from './pages/overview/overview.component';
 import { DocsComponent } from './pages/docs/docs.component';
@@ -35,8 +32,11 @@ import { Createapp3Component } from './components/createapp3/createapp3.componen
 import { Cardoverview2Component } from './components/cardoverview2/cardoverview2.component';
 import { Cardoverview3Component } from './components/cardoverview3/cardoverview3.component';
 import { Cardoverview4Component } from './components/cardoverview4/cardoverview4.component';
-import { TwolinechartComponent } from './components/twolinechart/twolinechart.component';
 import { BarlinechartComponent } from './components/barlinechart/barlinechart.component';
+import { SignupComponent } from './pages/external/signup/signup.component';
+import { TwolinechartComponent } from './components/twolinechart/twolinechart.component';
+import { SigninComponent } from './pages/external/signin/signin.component';
+import { ResetPaswordComponent } from './pages/external/reset-pasword/reset-pasword.component';
 
 @NgModule({
   declarations: [
@@ -44,9 +44,7 @@ import { BarlinechartComponent } from './components/barlinechart/barlinechart.co
     // HeaderComponent,
     // FooterComponent,
     // SidebarComponent,
-    // SigninComponent,
-    // SignupComponent,
-    // ResetPaswordComponent,
+ 
     // ErrorPageComponent,
     OverviewComponent,
     DocsComponent,
@@ -71,8 +69,11 @@ import { BarlinechartComponent } from './components/barlinechart/barlinechart.co
     Cardoverview2Component,
     Cardoverview3Component,
     Cardoverview4Component,
-    TwolinechartComponent,
     BarlinechartComponent,
+    SignupComponent,
+    TwolinechartComponent,
+    SigninComponent,
+    ResetPaswordComponent,
   ],
   imports: [
     BrowserModule,
