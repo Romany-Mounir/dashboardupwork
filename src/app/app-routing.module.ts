@@ -24,6 +24,7 @@ const routes: Routes = [
 {path:'myaccount',component:AccountComponent},
 {path:'help',component:HelpComponent},
 { path: '',  redirectTo: '/overview', pathMatch: 'full' },
+{path:'404error',component:ErrorPageComponent},
 {path:'**',component:ErrorPageComponent},
 ];
 
