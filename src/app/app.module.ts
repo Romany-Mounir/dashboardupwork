@@ -25,6 +25,10 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { PreferencesComponent } from './components/preferences/preferences.component';
 import { SecurityComponent } from './components/security/security.component';
 import { PaymentMethodComponent } from './components/payment-method/payment-method.component';
+import { GeneralComponent } from './components/general/general.component';
+import { PlanComponent } from './components/plan/plan.component';
+import { DataPrivacyComponent } from './components/data-privacy/data-privacy.component';
+import { NotificationSettingsComponent } from './components/notification-settings/notification-settings.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +52,11 @@ import { PaymentMethodComponent } from './components/payment-method/payment-meth
     ProfileComponent,
     PreferencesComponent,
     SecurityComponent,
-    PaymentMethodComponent
+    PaymentMethodComponent,
+    GeneralComponent,
+    PlanComponent,
+    DataPrivacyComponent,
+    NotificationSettingsComponent
   ],
   imports: [
     BrowserModule,
