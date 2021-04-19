@@ -23,9 +23,10 @@ const routes: Routes = [
 {path:'signin',component:SigninComponent},
 {path:'myaccount',component:AccountComponent},
 {path:'help',component:HelpComponent},
-{ path: '',  redirectTo: '/overview', pathMatch: 'full' },
 {path:'404error',component:ErrorPageComponent},
+{ path: '',  redirectTo: '/overview', pathMatch: 'full' },
 {path:'**',component:ErrorPageComponent},
+
 ];
 
 @NgModule({
