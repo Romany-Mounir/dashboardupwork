@@ -6,21 +6,19 @@ import { AppComponent } from './app.component';
 // import { HeaderComponent } from './components/header/header.component';
 // import { FooterComponent } from './components/footer/footer/footer.component';
 // import { SidebarComponent } from './components/sidebar/sidebar/sidebar.component';
-// import { ErrorPageComponent } from './pages/external/error-page/error-page.component';
-// import { OverviewComponent } from './pages/overview/overview.component';
-import { DocsComponent } from './pages/docs/docs.component';
 // import { OrdersComponent } from './pages/orders/orders.component';
-import { ChartsComponent } from './pages/charts/charts.component';
 // import { HelpComponent } from './pages/help/help.component';
 // import { NotificationsComponent } from './pages/notifications/notifications.component';
 // import { SettingsComponent } from './pages/settings/settings.component';
 // import { AccountComponent } from './pages/account/account.component';
+import { OverviewComponent } from './pages/overview/overview.component';
+import { DocsComponent } from './pages/docs/docs.component';
+import { ChartsComponent } from './pages/charts/charts.component';
 import { LineChartComponent } from './components/line-chart/line-chart.component';
 import { PieChartComponent } from './components/pie-chart/pie-chart.component';
 import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 import { DoughnutChartComponent } from './components/doughnut-chart/doughnut-chart.component';
 import { ChartsModule } from 'ng2-charts';
-import { OverviewComponent } from './pages/overview/overview.component';
 import { CardoverviewComponent } from './components/cardoverview/cardoverview.component';
 import { SearchselectformComponent } from './components/searchselectform/searchselectform.component';
 import { DocscComponent } from './components/docsc/docsc.component';
@@ -37,6 +35,7 @@ import { SignupComponent } from './pages/external/signup/signup.component';
 import { TwolinechartComponent } from './components/twolinechart/twolinechart.component';
 import { SigninComponent } from './pages/external/signin/signin.component';
 import { ResetPaswordComponent } from './pages/external/reset-pasword/reset-pasword.component';
+import { ErrorPageComponent } from './pages/external/error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -44,16 +43,16 @@ import { ResetPaswordComponent } from './pages/external/reset-pasword/reset-pasw
     // HeaderComponent,
     // FooterComponent,
     // SidebarComponent,
- 
-    // ErrorPageComponent,
-    OverviewComponent,
-    DocsComponent,
-    // OrdersComponent,
-    ChartsComponent,
     // HelpComponent,
     // NotificationsComponent,
     // SettingsComponent,
     // AccountComponent,
+    // OrdersComponent,
+ 
+    ErrorPageComponent,
+    OverviewComponent,
+    DocsComponent,
+    ChartsComponent,
     LineChartComponent,
     PieChartComponent,
     BarChartComponent,
