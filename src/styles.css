@@ -10136,10 +10136,6 @@ button.close:focus {
     top: 0
 }
 
-.app-card .app-card-header {
-    border-bottom: 1px solid #e7e9ed
-}
-
 .app-card .app-card-title {
     font-size: 1.125rem;
     margin-bottom: 0
@@ -10521,21 +10517,6 @@ button.close:focus {
     height: 100%
 }
 
-.app-card-account .item {
-    font-size: .875rem
-}
-
-.app-card-account .item .profile-image {
-    width: 60px;
-    height: 60px
-}
-
-.app-card-account .item .btn-sm,
-.app-card-account .item .btn-group-sm>.btn {
-    padding: .125rem .5rem;
-    font-size: .75rem
-}
-
 .settings-section .section-title {
     font-size: 1.25rem
 }
@@ -10591,27 +10572,6 @@ button.close:focus {
     .app-card-stat .stats-type {
         font-size: .75rem
     }
-}
-
-.app-login .auth-background-holder {
-    /* background: url("../images/background/background-1.jpg") no-repeat center center;
-  background-size: cover;
-  height: 100vh;
-  min-height: 100% */
-}
-
-.app-signup .auth-background-holder {
-    /* background: url("../images/background/background-2.jpg") no-repeat center center;
-  background-size: cover;
-  height: 100vh;
-  min-height: 100% */
-}
-
-.app-reset-password .auth-background-holder {
-    /* background: url("../images/background/background-3.jpg") no-repeat center center;
-  background-size: cover;
-  height: 100vh;
-  min-height: 100% */
 }
 
 .auth-main-col,

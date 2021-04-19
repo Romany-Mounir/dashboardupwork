@@ -21,6 +21,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NotificationComponent } from './components/notification/notification.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { PreferencesComponent } from './components/preferences/preferences.component';
+import { SecurityComponent } from './components/security/security.component';
+import { PaymentMethodComponent } from './components/payment-method/payment-method.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +44,11 @@ import { NotificationComponent } from './components/notification/notification.co
     NotificationsComponent,
     SettingsComponent,
     AccountComponent,
-    NotificationComponent
+    NotificationComponent,
+    ProfileComponent,
+    PreferencesComponent,
+    SecurityComponent,
+    PaymentMethodComponent
   ],
   imports: [
     BrowserModule,
