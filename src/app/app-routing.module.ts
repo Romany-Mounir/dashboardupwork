@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth.guard';
 import { AccountComponent } from './pages/account/account.component';
 import { ChartsComponent } from './pages/charts/charts.component';
 import { ErrorPageComponent } from './pages/external/error-page/error-page.component';
@@ -13,19 +14,19 @@ import { OverviewComponent } from './pages/overview/overview.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 
 const routes: Routes = [
-{path:'overview',component:OverviewComponent},
-{path:'orders',component:OrdersComponent},
-{path:'charts',component:ChartsComponent},
-{path:'settings',component:SettingsComponent},
-{path:'notifications',component:NotificationsComponent},
-{path:'resetpassword',component:ResetPaswordComponent},
-{path:'signup',component:SignupComponent},
+{path:'overview',component:OverviewComponent,canActivate:[AuthGuard]},
+{path:'orders',component:OrdersComponent,canActivate:[AuthGuard]},
+{path:'charts',component:ChartsComponent,canActivate:[AuthGuard]},
+{path:'settings',component:SettingsComponent,canActivate:[AuthGuard]},
+{path:'notifications',component:NotificationsComponent,canActivate:[AuthGuard]},
+{path:'resetpassword',component:ResetPaswordComponent,canActivate:[AuthGuard]},
+{path:'signup',component:SignupComponent,canActivate:[AuthGuard]},
 {path:'signin',component:SigninComponent},
-{path:'myaccount',component:AccountComponent},
-{path:'help',component:HelpComponent},
-{path:'404error',component:ErrorPageComponent},
+{path:'myaccount',component:AccountComponent,canActivate:[AuthGuard]},
+{path:'help',component:HelpComponent,canActivate:[AuthGuard]},
+{path:'404error',component:ErrorPageComponent,canActivate:[AuthGuard]},
 { path: '',  redirectTo: '/overview', pathMatch: 'full' },
-{path:'**',component:ErrorPageComponent},
+{path:'**',redirectTo:'/404error'},
 
 ];
 

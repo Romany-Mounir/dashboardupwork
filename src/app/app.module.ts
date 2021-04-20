@@ -46,6 +46,7 @@ import { HelpComponent } from './pages/help/help.component';
 import { NotificationsComponent } from './pages/notifications/notifications.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { AccountComponent } from './pages/account/account.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -92,11 +93,15 @@ import { AccountComponent } from './pages/account/account.component';
     SidebarComponent,
   ],
   imports: [
-    BrowserModule,
+ 
+  BrowserModule,
     AppRoutingModule,
     ChartsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+}
