@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-statlist',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./statlist.component.css']
 })
 export class StatlistComponent implements OnInit {
+  
+  constructor(private firestore: AngularFirestore) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit() {
+  
   }
+
+
 
 }

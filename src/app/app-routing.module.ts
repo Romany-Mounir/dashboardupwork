@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth.guard';
+import { AddadminComponent } from './components/addadmin/addadmin.component';
+import { EditadminComponent } from './components/editadmin/editadmin.component';
+import { ListsofadminsComponent } from './components/listsofadmins/listsofadmins.component';
 import { AccountComponent } from './pages/account/account.component';
 import { ChartsComponent } from './pages/charts/charts.component';
 import { ErrorPageComponent } from './pages/external/error-page/error-page.component';
@@ -25,6 +28,9 @@ const routes: Routes = [
 {path:'myaccount',component:AccountComponent,canActivate:[AuthGuard]},
 {path:'help',component:HelpComponent,canActivate:[AuthGuard]},
 {path:'404error',component:ErrorPageComponent,canActivate:[AuthGuard]},
+{ path: 'create', component: AddadminComponent },
+{ path: 'list-admins', component: ListsofadminsComponent },
+{ path: 'update-admin/:id', component:  EditadminComponent},
 { path: '',  redirectTo: '/overview', pathMatch: 'full' },
 {path:'**',redirectTo:'/404error'},
 

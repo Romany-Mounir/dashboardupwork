@@ -11,9 +11,14 @@
       <app-sidebar></app-sidebar>
     </header>
   </div>
-  <div [ngClass]="{'app-wrapper': (router.url !== '/resetpassword' &&
-  router.url !== '/404error' &&
-  router.url !== '/signup') }"    >
+  <div
+    [ngClass]="{
+      'app-wrapper':
+        router.url !== '/resetpassword' &&
+        router.url !== '/404error' &&
+        router.url !== '/signup'
+    }"
+  >
     <router-outlet></router-outlet>
     <app-footer></app-footer>
   </div>

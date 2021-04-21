@@ -24,12 +24,9 @@ import { Cardoverview4Component } from './components/cardoverview4/cardoverview4
 import { BarlinechartComponent } from './components/barlinechart/barlinechart.component';
 import { SignupComponent } from './pages/external/signup/signup.component';
 import { TwolinechartComponent } from './components/twolinechart/twolinechart.component';
-
 import { ResetPaswordComponent } from './pages/external/reset-pasword/reset-pasword.component';
 import { ErrorPageComponent } from './pages/external/error-page/error-page.component';
-
 import { SigninComponent } from './pages/external/signin/signin.component';
-
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -46,7 +43,17 @@ import { HelpComponent } from './pages/help/help.component';
 import { NotificationsComponent } from './pages/notifications/notifications.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { AccountComponent } from './pages/account/account.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AddadminComponent } from './components/addadmin/addadmin.component';
+import { ListsofadminsComponent } from './components/listsofadmins/listsofadmins.component';
+import { CommonModule } from '@angular/common';
+import { EditadminComponent } from './components/editadmin/editadmin.component';
+
+
 
 @NgModule({
   declarations: [
@@ -67,6 +74,7 @@ import { FormsModule } from '@angular/forms';
     CreateappComponent,
     Createapp2Component,
     Createapp3Component,
+    CardoverviewComponent,
     Cardoverview2Component,
     Cardoverview3Component,
     Cardoverview4Component,
@@ -91,13 +99,24 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
+    AddadminComponent,
+    ListsofadminsComponent,
+    EditadminComponent,
   ],
   imports: [
- 
   BrowserModule,
     AppRoutingModule,
     ChartsModule,
     FormsModule,
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireDatabaseModule,
+  ],
+  exports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
