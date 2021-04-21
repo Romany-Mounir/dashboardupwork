@@ -13,7 +13,11 @@
           </div>
           <h2 class="auth-heading text-center mb-5">Log in to Portal</h2>
           <div class="auth-form-container text-left">
-            <form class="auth-form login-form">
+            <form
+              class="auth-form login-form"
+              #frm="ngForm"
+              (ngSubmit)="Login()"
+            >
               <div class="email mb-3">
                 <label class="sr-only" for="signin-email">Email</label>
                 <input

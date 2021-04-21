@@ -12,7 +12,7 @@ export class TwolinechartComponent  {
 
   // Array of different segments in chart
   lineChartsData: ChartDataSets[] = [
-    { data: [65, 59, 80, 81, 56,100,55], label: 'Dataset 1' },
+    { data: [58, 14, 23, 81, 56,100,68], label: 'Dataset 1' },
      { data: [28, 48, 40, 19, 86, 27, 90], label: 'Dataset 2' }
   ];
 
