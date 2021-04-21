@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { OverviewComponent } from './pages/overview/overview.component';
-import { DocsComponent } from './pages/docs/docs.component';
 import { ChartsComponent } from './pages/charts/charts.component';
 import { LineChartComponent } from './components/line-chart/line-chart.component';
 import { PieChartComponent } from './components/pie-chart/pie-chart.component';
@@ -60,7 +59,6 @@ import { EditadminComponent } from './components/editadmin/editadmin.component';
     AppComponent,
     ErrorPageComponent,
     OverviewComponent,
-    DocsComponent,
     ChartsComponent,
     LineChartComponent,
     PieChartComponent,
@@ -121,6 +119,6 @@ import { EditadminComponent } from './components/editadmin/editadmin.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
+export class AppModule {
 
 }
