@@ -1,9 +1,8 @@
 .backgrounds {
-    background: url("./../../../../assets/images/background/background-3.jpg")
-      no-repeat center center;
-  }
-  .app-logo .logo-icon {
-      width: 60px;
-      height: 60px;
-    }
-  
+    background: url("../../../../assets/images/background/loginBg.png") no-repeat center right;
+}
+
+.app-logo .logo-icon {
+    width: 60px;
+    height: 60px;
+}
