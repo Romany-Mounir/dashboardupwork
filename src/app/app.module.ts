@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { OverviewComponent } from './pages/overview/overview.component';
-import { DocsComponent } from './pages/docs/docs.component';
 import { ChartsComponent } from './pages/charts/charts.component';
 import { LineChartComponent } from './components/line-chart/line-chart.component';
 import { PieChartComponent } from './components/pie-chart/pie-chart.component';
@@ -53,7 +52,6 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     ErrorPageComponent,
     OverviewComponent,
-    DocsComponent,
     ChartsComponent,
     LineChartComponent,
     PieChartComponent,
@@ -93,7 +91,7 @@ import { FormsModule } from '@angular/forms';
     SidebarComponent,
   ],
   imports: [
- 
+
   BrowserModule,
     AppRoutingModule,
     ChartsModule,
@@ -102,6 +100,6 @@ import { FormsModule } from '@angular/forms';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
+export class AppModule {
 
 }

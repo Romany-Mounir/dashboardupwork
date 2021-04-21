@@ -15,7 +15,7 @@
             </div>
             <!--//col-->
             <div class="col-auto">
-                <h4 class="app-card-title">Payment methods</h4>
+                <h4 class="app-card-title">Admins</h4>
             </div>
             <!--//col-->
         </div>
@@ -24,41 +24,101 @@
     <!--//app-card-header-->
     <div class="app-card-body px-4 w-100">
 
-        <div class="item border-bottom py-3">
+        <!-- <div class="item border-bottom py-3">
             <div class="row justify-content-between align-items-center">
                 <div class="col-auto">
                     <div class="item-label"><i class="fab fa-cc-visa mr-2"></i><strong>Credit/Debit Card </strong>
                     </div>
                     <div class="item-data">1234*******5678</div>
-                </div>
-                <!--//col-->
-                <div class="col text-right">
+                </div> -->
+        <!--//col-->
+        <!-- <div class="col text-right">
                     <a class="btn-sm app-btn-secondary" href="#">Edit</a>
-                </div>
-                <!--//col-->
-            </div>
-            <!--//row-->
-        </div>
+                </div> -->
+        <!--//col-->
+        <!-- </div> -->
+        <!--//row-->
+        <!-- </div> -->
         <!--//item-->
-        <div class="item border-bottom py-3">
+        <!-- <div class="item border-bottom py-3">
             <div class="row justify-content-between align-items-center">
                 <div class="col-auto">
                     <div class="item-label"><i class="fab fa-paypal mr-2"></i><strong>PayPal</strong></div>
                     <div class="item-data">Not connected</div>
-                </div>
-                <!--//col-->
-                <div class="col text-right">
+                </div> -->
+        <!--//col-->
+        <!-- <div class="col text-right">
                     <a class="btn-sm app-btn-secondary" href="#">Connect</a>
-                </div>
-                <!--//col-->
-            </div>
-            <!--//row-->
-        </div>
+                </div> -->
+        <!--//col-->
+        <!-- </div> -->
+        <!--//row-->
+        <!-- </div> -->
         <!--//item-->
+        <!-- </div> -->
+        <!--//app-card-body-->
+        <div class="table-responsive">
+            <table class="table table-borderless mb-0">
+                <thead>
+                    <tr>
+                        <th class="meta">Admin name</th>
+                        <th class="meta">Admin ID</th>
+                        <th class="meta stat-cell">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#">Noha</a></td>
+                        <td class="stat-cell">110</td>
+                        <td class="stat-cell">
+                            <div class="text-left">
+                                <a class="btn-sm app-btn-secondary" href="#">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Saleh</a></td>
+                        <td class="stat-cell">67</td>
+                        <td class="stat-cell">
+                            <div class="text-left">
+                                <a class="btn-sm app-btn-secondary" href="#">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Fatma</a></td>
+                        <td class="stat-cell">56</td>
+                        <td class="stat-cell">
+                            <div class="text-left">
+                                <a class="btn-sm app-btn-secondary" href="#">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Khaled </a></td>
+                        <td class="stat-cell">24</td>
+                        <td class="stat-cell">
+                            <div class="text-left">
+                                <a class="btn-sm app-btn-secondary" href="#">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Amany </a></td>
+                        <td class="stat-cell">17</td>
+                        <td class="stat-cell">
+                            <div class="text-left">
+                                <a class="btn-sm app-btn-secondary" href="#">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--//table-responsive-->
     </div>
-    <!--//app-card-body-->
     <div class="app-card-footer p-4 mt-auto">
-        <a class="btn app-btn-secondary" href="#">Manage Payment</a>
+        <a class="btn app-btn-secondary" [routerLink]="[ '/signup' ]">Add New Admin</a>
     </div>
     <!--//app-card-footer-->
 
