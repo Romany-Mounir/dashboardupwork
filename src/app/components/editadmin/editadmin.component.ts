@@ -22,7 +22,7 @@ export class EditadminComponent implements OnInit {
     this.editForm = this.formBuilder.group({
       name: [''],
       email: [''],
-      phone: [],
+      phone: [''],
       password:[''],
     })
   }

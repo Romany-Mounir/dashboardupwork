@@ -5,5 +5,4 @@ export class Admins {
         phone: number;
         password:string;
         imgUrl:string;
-    
 }

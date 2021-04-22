@@ -51,6 +51,11 @@ import { AddadminComponent } from './components/addadmin/addadmin.component';
 import { ListsofadminsComponent } from './components/listsofadmins/listsofadmins.component';
 import { CommonModule } from '@angular/common';
 import { EditadminComponent } from './components/editadmin/editadmin.component';
+import { Signup2Component } from './pages/signup2/signup2.component';
+import { AuthService } from './services/auth.service';
+import { SpecialaccountComponent } from './pages/specialaccount/specialaccount.component';
+import { Profile1Component } from './components/profile1/profile1.component';
+
 
 
 
@@ -100,9 +105,12 @@ import { EditadminComponent } from './components/editadmin/editadmin.component';
     AddadminComponent,
     ListsofadminsComponent,
     EditadminComponent,
+    Signup2Component,
+    SpecialaccountComponent,
+    Profile1Component,
   ],
   imports: [
-  BrowserModule,
+    BrowserModule,
     AppRoutingModule,
     ChartsModule,
     FormsModule,

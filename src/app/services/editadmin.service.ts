@@ -27,4 +27,5 @@ getAdminDoc(id) {
   .doc(id)
   .valueChanges()
 }
+
 }

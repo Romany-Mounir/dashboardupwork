@@ -11,15 +11,10 @@
                 alt="logo"
             /></a>
           </div>
-          <h2 class="auth-heading text-center mb-4">update to Upwork</h2>
+          <h2 class="auth-heading text-center mb-4">Sign Up to Upwork</h2>
           <div class="auth-form-container text-left mx-auto">
-            <form
-              #frm
-              [formGroup]="editForm"
-              (ngSubmit)="onSubmit()"
-              novalidate
-            >
-              <div class="email mb-3">
+            <form [formGroup]="adminForm" (ngSubmit)="onSubmit()" novalidate>
+              <div class="email mb-2">
                 <label>Name</label>
                 <input
                   type="text"
@@ -28,16 +23,17 @@
                   required
                 />
               </div>
-              <div class="email mb-3">
+              <div class="email mb-2">
                 <label>Email</label>
                 <input
                   type="email"
                   formControlName="email"
                   class="form-control"
+                  #email
                   required
                 />
               </div>
-              <div class="email mb-3">
+              <div class="email mb-2">
                 <label>Phone</label>
                 <input
                   type="number"
@@ -46,17 +42,18 @@
                   required
                 />
               </div>
-              <div class="password mb-3">
+              <div class="password mb-2">
                 <label>Password</label>
                 <input
-                  type="text"
+                  type="string"
                   formControlName="password"
                   class="form-control"
+                  #password
                   required
                 />
               </div>
 
-              <div class="email mb-3">
+              <!-- <div class="email mb-3">
                 <label>imgUrl</label>
                 <input
                   type="text"
@@ -64,9 +61,9 @@
                   class="form-control"
                   required
                 />
-              </div>
+              </div> -->
 
-              <div class="extra mb-3">
+              <div class="extra mb-2">
                 <div class="form-check">
                   <input
                     class="form-check-input"
@@ -87,17 +84,13 @@
                 <button
                   type="submit"
                   class="btn app-btn-primary btn-block theme-btn mx-auto"
+                  [disabled]="!adminForm.valid"
                 >
                   Sign Up
                 </button>
               </div>
             </form>
             <!--//auth-form-->
-
-            <div class="auth-option text-center pt-5">
-              Already have an account?
-              <a class="text-link" routerLink="/signin">Log in</a>
-            </div>
           </div>
           <!--//auth-form-container-->
         </div>
