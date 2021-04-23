@@ -22,7 +22,7 @@ export class UserService {
     localStorage.removeItem('usertoken');
   }
     IsLogged():boolean{
-       
+
       if(localStorage.getItem('usertoken'))
       {
         // this.router.navigateByUrl('/overview');

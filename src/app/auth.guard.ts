@@ -8,7 +8,7 @@ import { UserService } from './services/user.service';
 })
 export class AuthGuard implements CanActivate {
   constructor(private users: UserService, private router: Router ){
-   
+
   }
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -16,14 +16,14 @@ export class AuthGuard implements CanActivate {
     // return true;
     const loggedstatus=this.users.IsLogged();
     if(loggedstatus){
-      
+
          return true;
       }
       else{
         this.router.navigateByUrl('/signin');
         return false;
       }
-    
+
   }
-  
+
 }
