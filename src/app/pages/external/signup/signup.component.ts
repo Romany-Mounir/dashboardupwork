@@ -24,8 +24,8 @@ export class SignupComponent implements OnInit {
       name: [''],
       email: [''],
       phone: [],
-      password:[''],
-      imgUrl:[''],
+      // password:[''],
+      // imgUrl:[''],
     })
   }
 
@@ -38,8 +38,8 @@ export class SignupComponent implements OnInit {
         name: [this.adminRef.name],
         email: [this.adminRef.email],
         phone: [this.adminRef.phone],
-        password: [this.adminRef.password],
-        imgUrl:[this.adminRef.imgUrl],
+        // password: [this.adminRef.password],
+        // imgUrl:[this.adminRef.imgUrl],
       })      
     })
   }

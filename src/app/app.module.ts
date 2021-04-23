@@ -55,9 +55,7 @@ import { Signup2Component } from './pages/signup2/signup2.component';
 import { AuthService } from './services/auth.service';
 import { SpecialaccountComponent } from './pages/specialaccount/specialaccount.component';
 import { Profile1Component } from './components/profile1/profile1.component';
-
-
-
+import { ResetpassformComponent } from './pages/resetpassform/resetpassform.component';
 
 @NgModule({
   declarations: [
@@ -108,6 +106,7 @@ import { Profile1Component } from './components/profile1/profile1.component';
     Signup2Component,
     SpecialaccountComponent,
     Profile1Component,
+    ResetpassformComponent,
   ],
   imports: [
     BrowserModule,
@@ -119,14 +118,8 @@ import { Profile1Component } from './components/profile1/profile1.component';
     AngularFirestoreModule,
     AngularFireDatabaseModule,
   ],
-  exports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule
-  ],
+  exports: [CommonModule, FormsModule, ReactiveFormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule {
-
-}
+export class AppModule {}

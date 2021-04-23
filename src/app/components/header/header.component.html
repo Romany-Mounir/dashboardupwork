@@ -303,9 +303,7 @@ router.url !== '/404error'
                 <hr class="dropdown-divider" />
               </li>
               <li>
-                <a class="dropdown-item" routerLink="/signin" (click)="Logout()"
-                  >Log Out</a
-                >
+                <a class="dropdown-item"  (click)="authService.SignOut()" >Log Out</a >
               </li>
             </ul>
           </div>

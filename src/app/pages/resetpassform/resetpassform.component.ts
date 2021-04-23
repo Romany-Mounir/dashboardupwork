@@ -1,0 +1,65 @@
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+} from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
+import { EditadminService } from 'src/app/services/editadmin.service';
+import { firebase } from '@firebase/app';
+
+@Component({
+  selector: 'app-resetpassform',
+  templateUrl: './resetpassform.component.html',
+  styleUrls: ['./resetpassform.component.css'],
+})
+export class ResetpassformComponent implements OnInit, AfterViewInit {
+  adminRef?: any;
+  ids?: any;
+  public editForm: FormGroup;
+
+  constructor(
+    public afAuth: AngularFireAuth,
+    private afs: AngularFirestore,
+    public adminService: EditadminService,
+    private cdr: ChangeDetectorRef,
+    public Auth: AuthService,
+    public formBuilder: FormBuilder,
+    private act: ActivatedRoute,
+    private router: Router
+  ) {
+    this.editForm = this.formBuilder.group({
+      password: [''],
+    });
+  }
+  ngOnInit(): void {}
+
+  ngAfterViewInit(): void {}
+
+  Changepassword() {
+    this.afs
+      .collection('Admins')
+      .get()
+      .subscribe((docs) => {
+        docs.forEach((doc) => {
+          if (doc.data().uid === firebase.auth().currentUser.uid) {
+            console.log('hello');
+            console.log(this.editForm.get('password'));
+            this.afs
+              .collection('Admins')
+              .doc(doc.id)
+              .update({
+                password: this.editForm.get('password').value,
+              });
+            this.router.navigate(['/myprofile']);
+          }
+        });
+      });
+  }
+
+  onSubmit() {}
+}
