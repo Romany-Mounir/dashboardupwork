@@ -1,4 +1,8 @@
-import { environment } from './../environments/environment.prod';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire';
+
+// import { environment } from './../environments/environment.prod';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -24,17 +28,13 @@ import { Cardoverview4Component } from './components/cardoverview4/cardoverview4
 import { BarlinechartComponent } from './components/barlinechart/barlinechart.component';
 import { SignupComponent } from './pages/external/signup/signup.component';
 import { TwolinechartComponent } from './components/twolinechart/twolinechart.component';
-
 import { ResetPaswordComponent } from './pages/external/reset-pasword/reset-pasword.component';
 import { ErrorPageComponent } from './pages/external/error-page/error-page.component';
-
 import { SigninComponent } from './pages/external/signin/signin.component';
-
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NotificationComponent } from './components/notification/notification.component';
-import { ProfileComponent } from './components/profile/profile.component';
 import { PreferencesComponent } from './components/preferences/preferences.component';
 import { SecurityComponent } from './components/security/security.component';
 import { PaymentMethodComponent } from './components/payment-method/payment-method.component';
@@ -45,13 +45,20 @@ import { NotificationSettingsComponent } from './components/notification-setting
 import { HelpComponent } from './pages/help/help.component';
 import { NotificationsComponent } from './pages/notifications/notifications.component';
 import { SettingsComponent } from './pages/settings/settings.component';
-import { AccountComponent } from './pages/account/account.component';
-import { FormsModule } from '@angular/forms';
-import { OrdersComponent } from './pages/orders/orders.component';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { environment } from 'src/environments/environment';
+
 import { ClientListComponent } from './pages/client-list/client-list.component';
 import { TalentListComponent } from './pages/talent-list/talent-list.component';
+import { AddadminComponent } from './components/addadmin/addadmin.component';
+import { ListsofadminsComponent } from './components/listsofadmins/listsofadmins.component';
+import { CommonModule } from '@angular/common';
+import { EditadminComponent } from './components/editadmin/editadmin.component';
+import { Signup2Component } from './pages/signup2/signup2.component';
+import { SpecialaccountComponent } from './pages/specialaccount/specialaccount.component';
+import { Profile1Component } from './components/profile1/profile1.component';
+import { ResetpassformComponent } from './pages/resetpassform/resetpassform.component';
+import { OrdersComponent } from './pages/orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +78,7 @@ import { TalentListComponent } from './pages/talent-list/talent-list.component';
     CreateappComponent,
     Createapp2Component,
     Createapp3Component,
+    CardoverviewComponent,
     Cardoverview2Component,
     Cardoverview3Component,
     Cardoverview4Component,
@@ -82,9 +90,7 @@ import { TalentListComponent } from './pages/talent-list/talent-list.component';
     HelpComponent,
     NotificationsComponent,
     SettingsComponent,
-    AccountComponent,
     NotificationComponent,
-    ProfileComponent,
     PreferencesComponent,
     SecurityComponent,
     PaymentMethodComponent,
@@ -98,15 +104,27 @@ import { TalentListComponent } from './pages/talent-list/talent-list.component';
     OrdersComponent,
     ClientListComponent,
     TalentListComponent,
+    AddadminComponent,
+    ListsofadminsComponent,
+    EditadminComponent,
+    Signup2Component,
+    SpecialaccountComponent,
+    Profile1Component,
+    ResetpassformComponent,
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ChartsModule,
-    FormsModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
-  ],
+  AngularFireDatabaseModule,
+  BrowserModule,
+  AppRoutingModule,
+  ChartsModule,
+  FormsModule,
+  AngularFireModule.initializeApp(environment.firebase),
+  ReactiveFormsModule,
+  AngularFireDatabaseModule,
+  AngularFirestoreModule,
+
+],
+  exports: [CommonModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
