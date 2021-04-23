@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
 import { EditadminService } from 'src/app/services/editadmin.service';
-
+import { Router, ActivatedRoute } from "@angular/router";
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  selector: 'app-editadmin',
+  templateUrl: './editadmin.component.html',
+  styleUrls: ['./editadmin.component.css']
 })
-export class SignupComponent implements OnInit {
+export class EditadminComponent implements OnInit {
 
   public editForm: FormGroup;
   adminRef: any
@@ -23,9 +22,8 @@ export class SignupComponent implements OnInit {
     this.editForm = this.formBuilder.group({
       name: [''],
       email: [''],
-      phone: [],
-      // password:[''],
-      // imgUrl:[''],
+      phone: [''],
+      password:[''],
     })
   }
 
@@ -38,18 +36,16 @@ export class SignupComponent implements OnInit {
         name: [this.adminRef.name],
         email: [this.adminRef.email],
         phone: [this.adminRef.phone],
-        // password: [this.adminRef.password],
-        // imgUrl:[this.adminRef.imgUrl],
+        password: [this.adminRef.password],
       })      
     })
   }
 
   onSubmit() {
-    const id = this.act.snapshot.paramMap.get('id');    
+    const id = this.act.snapshot.paramMap.get('id');
+    
     this.adminService.updateAdmin(this.editForm.value, id);
-    this.router.navigate(['list-admins']);
+    this.router.navigate(['list-users']);
   };
-
-
 
 }
