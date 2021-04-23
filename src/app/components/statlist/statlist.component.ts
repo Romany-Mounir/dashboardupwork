@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { Client } from 'src/app/models/client.model';
 import { observable } from 'rxjs';
@@ -7,19 +6,21 @@ import { ClientService } from 'src/app/services/client.service';
 @Component({
   selector: 'app-statlist',
   templateUrl: './statlist.component.html',
-  styleUrls: ['./statlist.component.css']
+  styleUrls: ['./statlist.component.css'],
 })
 export class StatlistComponent implements OnInit {
-  clients: Client[]
-  constructor(private clientService: ClientService) { }
+  clients: Client[];
+  constructor(private clientService: ClientService) {}
 
   ngOnInit(): void {
     // tslint:disable-next-line: deprecation
-    this.clientService.getClientList().subscribe(res => {
-      this.clients = res.map(e => {
+    this.clientService.getClientList().subscribe((res) => {
+      this.clients = res.map((e) => {
+        console.log(e.payload.doc.data());
+
         return {
           id: e.payload.doc.id,
-          ...e.payload.doc.data() as object
+          ...(e.payload.doc.data() as object),
         } as Client;
       });
     });

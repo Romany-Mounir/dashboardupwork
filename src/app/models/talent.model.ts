@@ -1,7 +1,22 @@
 export class Talent {
-  name: string;
+  email: string;
+  englishProficiency: string;
+  expertiseLevel: string;
+  firstName: string;
+  lastName: string;
   location: string;
-  category: string;
   connects: number;
   earning: number;
+  hourlyRate: string;
+  jobCategory: string;
+  city: string;
+  country: string;
+  street: string;
+  overview: string;
+  password: string;
+  phoneNumber: string;
+  profilePhoto: string;
+  school: string;
+  title: string;
+  userType: string;
 }
