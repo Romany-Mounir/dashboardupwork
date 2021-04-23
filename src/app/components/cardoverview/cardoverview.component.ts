@@ -1,26 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/database';
-import { Observable } from 'rxjs';
+import { ClientService } from 'src/app/services/client.service';
 
 @Component({
   selector: 'app-cardoverview',
   templateUrl: './cardoverview.component.html',
-  styleUrls: ['./cardoverview.component.css']
+  styleUrls: ['./cardoverview.component.css'],
 })
 export class CardoverviewComponent implements OnInit {
-    // clients:  Observable<any[]>;
-    // Clients:any;
-  constructor(db:AngularFireDatabase) { 
-    // this.clients=db.list('/clients').valueChanges();
-    // this.clients.subscribe(client => {
-    //   this.Clients = client;
-    //   console.log(this.Clients);
-    // })
+  clientLength: number;
+  constructor(private clientService: ClientService) {}
 
-  }
   ngOnInit(): void {
-   
+    this.clientService.getClientList().subscribe((res) => {
+      this.clientLength = res.length;
+    });
   }
-
-  }
-
+}
