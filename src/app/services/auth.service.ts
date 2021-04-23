@@ -41,8 +41,23 @@ export class AuthService {
     return this.afAuth.signInWithEmailAndPassword(email, password)
       .then((result) => {
        // window.alert("you successfully login")
-       localStorage.setItem('user', JSON.stringify(result));
-       JSON.parse(localStorage.getItem('user'));
+      //  localStorage.setItem('user', JSON.stringify(result.user));
+      // var userss= JSON.parse(localStorage.getItem('user'));
+      //  console.log(userss.email);
+
+      this.afs.collection('Admins').get().subscribe(docs=>{
+        docs.forEach(doc => {
+          if(doc.data().uid===firebase.auth().currentUser.uid)
+          {
+            console.log(doc.data());
+             localStorage.setItem('user',JSON.stringify(doc.data()));
+          }
+          
+        });
+      })
+
+
+
 
         this.router.navigate(['/myprofile']);
       }).catch((error) => {

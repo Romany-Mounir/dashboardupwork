@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component,ChangeDetectorRef, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
@@ -11,14 +11,21 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './profile1.component.html',
   styleUrls: ['./profile1.component.css']
 })
-export class Profile1Component implements OnInit {
-  adminRef: any;
-  constructor( public afAuth: AngularFireAuth,private db:AngularFirestore,  public adminService:EditadminService,private auth: AuthService) {
+export class Profile1Component implements OnInit ,AfterViewInit{
+  adminRef?: any;
+  constructor( public afAuth: AngularFireAuth,private db:AngularFirestore,  public adminService:EditadminService,private auth: AuthService,private cdr: ChangeDetectorRef) {
    ;
+  
 }
+  ngAfterViewInit(): void {
+    this.adminRef=JSON.parse(localStorage.getItem('user'))
+    // console.log(this.adminRef);
+    this.cdr.detectChanges();
+  }
   
   ngOnInit(): void {
-    this.adminRef=localStorage.getItem('user');
-    console.log(this.adminRef);
+  
 }
+
+
 }
