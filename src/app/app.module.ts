@@ -1,3 +1,7 @@
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire';
+
 // import { environment } from './../environments/environment.prod';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -43,9 +47,9 @@ import { NotificationsComponent } from './pages/notifications/notifications.comp
 import { SettingsComponent } from './pages/settings/settings.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { environment } from 'src/environments/environment';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
+
+import { ClientListComponent } from './pages/client-list/client-list.component';
+import { TalentListComponent } from './pages/talent-list/talent-list.component';
 import { AddadminComponent } from './components/addadmin/addadmin.component';
 import { ListsofadminsComponent } from './components/listsofadmins/listsofadmins.component';
 import { CommonModule } from '@angular/common';
@@ -54,6 +58,7 @@ import { Signup2Component } from './pages/signup2/signup2.component';
 import { SpecialaccountComponent } from './pages/specialaccount/specialaccount.component';
 import { Profile1Component } from './components/profile1/profile1.component';
 import { ResetpassformComponent } from './pages/resetpassform/resetpassform.component';
+import { OrdersComponent } from './pages/orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -96,6 +101,9 @@ import { ResetpassformComponent } from './pages/resetpassform/resetpassform.comp
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
+    OrdersComponent,
+    ClientListComponent,
+    TalentListComponent,
     AddadminComponent,
     ListsofadminsComponent,
     EditadminComponent,
@@ -105,15 +113,17 @@ import { ResetpassformComponent } from './pages/resetpassform/resetpassform.comp
     ResetpassformComponent,
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ChartsModule,
-    FormsModule,
-    ReactiveFormsModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
-    AngularFireDatabaseModule,
-  ],
+  AngularFireDatabaseModule,
+  BrowserModule,
+  AppRoutingModule,
+  ChartsModule,
+  FormsModule,
+  AngularFireModule.initializeApp(environment.firebase),
+  ReactiveFormsModule,
+  AngularFireDatabaseModule,
+  AngularFirestoreModule,
+
+],
   exports: [CommonModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],

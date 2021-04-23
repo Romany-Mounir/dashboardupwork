@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth.guard';
 import { ChartsComponent } from './pages/charts/charts.component';
+import { ClientListComponent } from './pages/client-list/client-list.component';
 import { ErrorPageComponent } from './pages/external/error-page/error-page.component';
 import { ResetPaswordComponent } from './pages/external/reset-pasword/reset-pasword.component';
 import { SigninComponent } from './pages/external/signin/signin.component';
@@ -14,6 +15,7 @@ import { OverviewComponent } from './pages/overview/overview.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { SpecialaccountComponent } from './pages/specialaccount/specialaccount.component';
 import { ResetpassformComponent } from './pages/resetpassform/resetpassform.component';
+import { TalentListComponent } from './pages/talent-list/talent-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/overview', pathMatch: 'full' },
@@ -40,6 +42,8 @@ const routes: Routes = [
   { path: 'update-admin/:id', component: SignupComponent },
   { path: 'myprofile', component: SpecialaccountComponent },
   { path: 'restform', component: ResetpassformComponent },
+  {path:'clientlist',component:ClientListComponent,canActivate:[AuthGuard]},
+{path:'talentlist',component:TalentListComponent,canActivate:[AuthGuard]},
   { path: '**', redirectTo: '/404error' },
 ];
 

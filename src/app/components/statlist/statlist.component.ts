@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Client } from 'src/app/models/client.model';
-import { observable } from 'rxjs';
 import { ClientService } from 'src/app/services/client.service';
 
 @Component({
@@ -16,8 +15,6 @@ export class StatlistComponent implements OnInit {
     // tslint:disable-next-line: deprecation
     this.clientService.getClientList().subscribe((res) => {
       this.clients = res.map((e) => {
-        console.log(e.payload.doc.data());
-
         return {
           id: e.payload.doc.id,
           ...(e.payload.doc.data() as object),

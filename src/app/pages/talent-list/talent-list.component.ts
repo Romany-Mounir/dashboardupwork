@@ -1,15 +1,16 @@
-import { Talent } from './../../models/talent.model';
 import { TalentService } from 'src/app/services/talent.service';
 import { Component, OnInit } from '@angular/core';
+import { Talent } from 'src/app/models/talent.model';
+
 
 @Component({
-  selector: 'app-progress',
-  templateUrl: './progress.component.html',
-  styleUrls: ['./progress.component.css']
+  selector: 'app-talent-list',
+  templateUrl: './talent-list.component.html',
+  styleUrls: ['./talent-list.component.css']
 })
-export class ProgressComponent implements OnInit {
-  talents : Talent []
-  constructor(private talentService:TalentService) { }
+export class TalentListComponent implements OnInit {
+  talents: Talent[];
+  constructor(private talentService: TalentService ) {}
 
   ngOnInit(): void {
     this.talentService.getTalentList().subscribe((res) => {
