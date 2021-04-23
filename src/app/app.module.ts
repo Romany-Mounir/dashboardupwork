@@ -50,6 +50,8 @@ import { FormsModule } from '@angular/forms';
 import { OrdersComponent } from './pages/orders/orders.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { ClientListComponent } from './pages/client-list/client-list.component';
+import { TalentListComponent } from './pages/talent-list/talent-list.component';
 
 @NgModule({
   declarations: [
@@ -94,6 +96,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     FooterComponent,
     SidebarComponent,
     OrdersComponent,
+    ClientListComponent,
+    TalentListComponent,
   ],
   imports: [
     BrowserModule,
