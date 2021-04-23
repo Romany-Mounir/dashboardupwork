@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment.prod';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -46,6 +47,9 @@ import { NotificationsComponent } from './pages/notifications/notifications.comp
 import { SettingsComponent } from './pages/settings/settings.component';
 import { AccountComponent } from './pages/account/account.component';
 import { FormsModule } from '@angular/forms';
+import { OrdersComponent } from './pages/orders/orders.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from "@angular/fire/firestore";
 
 @NgModule({
   declarations: [
@@ -89,6 +93,7 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
+    OrdersComponent
   ],
   imports: [
 
@@ -96,6 +101,8 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     ChartsModule,
     FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
