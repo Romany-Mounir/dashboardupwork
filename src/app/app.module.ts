@@ -49,7 +49,7 @@ import { AccountComponent } from './pages/account/account.component';
 import { FormsModule } from '@angular/forms';
 import { OrdersComponent } from './pages/orders/orders.component';
 import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -93,20 +93,17 @@ import { AngularFirestoreModule } from "@angular/fire/firestore";
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-    OrdersComponent
+    OrdersComponent,
   ],
   imports: [
-
-  BrowserModule,
+    BrowserModule,
     AppRoutingModule,
     ChartsModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule {
-
-}
+export class AppModule {}
