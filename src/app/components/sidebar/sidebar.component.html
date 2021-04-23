@@ -1,22 +1,19 @@
 <div id="app-sidepanel" class="app-sidepanel">
-    <!-- *ngIf="
+  <!-- *ngIf="
 router.url !== '/signin' &&
 router.url !== '/signup' &&
 router.url !== '/resetpassword' &&
 router.url !== '/404error'
 " -->
-    <div id="sidepanel-drop" class="sidepanel-drop"></div>
-    <div class="sidepanel-inner d-flex flex-column">
-        <a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a
+  <div id="sidepanel-drop" class="sidepanel-drop"></div>
+  <div class="sidepanel-inner d-flex flex-column">
+    <a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none"
+      >&times;</a
     >
     <div class="app-branding">
       <a class="app-logo" href="index.html"
-        ><img
-          class="logo mr-2"
-          src="assets/upwork.svg"
-          alt="logo"
-        /></a
-      >
+        ><img class="logo mr-2" src="assets/upwork.svg" alt="logo"
+      /></a>
     </div>
     <!--//app-branding-->
 
@@ -46,14 +43,14 @@ router.url !== '/404error'
             </span>
             <span class="nav-link-text">Overview</span>
           </a>
-        <!--//nav-link-->
+          <!--//nav-link-->
         </li>
 
         <!--//nav-item-->
         <li class="nav-item">
-            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-            <a class="nav-link" routerLink="/orders">
-                <span class="nav-icon">
+          <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+          <a class="nav-link" routerLink="/orders">
+            <span class="nav-icon">
               <svg
                 width="1em"
                 height="1em"
@@ -75,16 +72,23 @@ router.url !== '/404error'
                 <circle cx="3.5" cy="10.5" r=".5" />
               </svg>
             </span>
-                <span class="nav-link-text">Jobs</span>
-            </a>
-            <!--//nav-link-->
+            <span class="nav-link-text">Jobs</span>
+          </a>
+          <!--//nav-link-->
         </li>
         <!--//nav-item-->
 
         <li class="nav-item has-submenu">
-            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-            <a class="nav-link submenu-toggle" data-bs-toggle="collapse" href="#submenu-1" role="button" aria-expanded="false" aria-controls="submenu-1">
-                <span class="nav-icon">
+          <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+          <a
+            class="nav-link submenu-toggle"
+            data-bs-toggle="collapse"
+            href="#submenu-1"
+            role="button"
+            aria-expanded="false"
+            aria-controls="submenu-1"
+          >
+            <span class="nav-icon">
               <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
               <svg
                 width="1em"
@@ -103,8 +107,8 @@ router.url !== '/404error'
                 />
               </svg>
             </span>
-                <span class="nav-link-text">Pages</span>
-                <span class="submenu-arrow">
+            <span class="nav-link-text">Pages</span>
+            <span class="submenu-arrow">
               <svg
                 width="1em"
                 height="1em"
@@ -119,13 +123,21 @@ router.url !== '/404error'
                 />
               </svg>
             </span>
-                <!--//submenu-arrow-->
-            </a>
-            <!--//nav-link-->
-            <div id="submenu-1" class="collapse submenu submenu-1" data-parent="#menu-accordion">
-                <ul class="submenu-list list-unstyled">
-                    <li class="submenu-item">
-                        <a class="submenu-link" routerLink="/notifications" routerLinkActive="router-link-active">Notifications</a
+            <!--//submenu-arrow-->
+          </a>
+          <!--//nav-link-->
+          <div
+            id="submenu-1"
+            class="collapse submenu submenu-1"
+            data-parent="#menu-accordion"
+          >
+            <ul class="submenu-list list-unstyled">
+              <li class="submenu-item">
+                <a
+                  class="submenu-link"
+                  routerLink="/notifications"
+                  routerLinkActive="router-link-active"
+                  >Notifications</a
                 >
               </li>
               <li class="submenu-item">
@@ -193,17 +205,25 @@ router.url !== '/404error'
             </span>
             <!--//submenu-arrow-->
           </a>
-                        <!--//nav-link-->
-                        <div id="submenu-2" class="collapse submenu submenu-2" data-parent="#menu-accordion">
-                            <ul class="submenu-list list-unstyled">
-                                <li class="submenu-item">
-                                    <a class="submenu-link" routerLink="/signin" routerLinkActive="router-link-active">Login</a
+          <!--//nav-link-->
+          <div
+            id="submenu-2"
+            class="collapse submenu submenu-2"
+            data-parent="#menu-accordion"
+          >
+            <ul class="submenu-list list-unstyled">
+              <li class="submenu-item">
+                <a
+                  class="submenu-link"
+                  routerLink="/signin"
+                  routerLinkActive="router-link-active"
+                  >Login</a
                 >
               </li>
               <li class="submenu-item">
                 <a
                   class="submenu-link"
-                  routerLink="/signup"
+                  routerLink="/create"
                   routerLinkActive="router-link-active"
                   >Signup</a
                 >
@@ -245,14 +265,18 @@ router.url !== '/404error'
             </span>
             <span class="nav-link-text">Charts</span>
           </a>
-                                    <!--//nav-link-->
-                                </li>
-                                <!--//nav-item-->
+          <!--//nav-link-->
+        </li>
+        <!--//nav-item-->
 
-                                <li class="nav-item">
-                                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                                    <a class="nav-link" routerLink="/help" routerLinkActive="router-link-active">
-                                        <span class="nav-icon">
+        <li class="nav-item">
+          <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+          <a
+            class="nav-link"
+            routerLink="/help"
+            routerLinkActive="router-link-active"
+          >
+            <span class="nav-icon">
               <svg
                 width="1em"
                 height="1em"
@@ -270,23 +294,27 @@ router.url !== '/404error'
                 />
               </svg>
             </span>
-                                        <span class="nav-link-text">Help</span>
-                                    </a>
-                                    <!--//nav-link-->
-                                </li>
-                                <!--//nav-item-->
-                            </ul>
-                            <!--//app-menu-->
-                            </nav>
+            <span class="nav-link-text">Help</span>
+          </a>
+          <!--//nav-link-->
+        </li>
+        <!--//nav-item-->
+      </ul>
+      <!--//app-menu-->
+    </nav>
 
-                            <!--//app-nav-->
-                            <div class="app-sidepanel-footer">
-                                <nav class="app-nav app-nav-footer">
-                                    <ul class="app-menu footer-menu list-unstyled">
-                                        <li class="nav-item">
-                                            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                                            <a class="nav-link" routerLink="/settings" routerLinkActive="active">
-                                                <span class="nav-icon">
+    <!--//app-nav-->
+    <div class="app-sidepanel-footer">
+      <nav class="app-nav app-nav-footer">
+        <ul class="app-menu footer-menu list-unstyled">
+          <li class="nav-item">
+            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+            <a
+              class="nav-link"
+              routerLink="/settings"
+              routerLinkActive="active"
+            >
+              <span class="nav-icon">
                 <svg
                   width="1em"
                   height="1em"
@@ -305,15 +333,18 @@ router.url !== '/404error'
                   />
                 </svg>
               </span>
-                                                <span class="nav-link-text">Settings</span>
-                                            </a>
-                                            <!--//nav-link-->
-                                        </li>
-                                        <!--//nav-item-->
-                                        <li class="nav-item">
-                                            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                                            <a class="nav-link" href="https://themes.3rdwavemedia.com/bootstrap-templates/admin-dashboard/portal-free-bootstrap-admin-dashboard-template-for-developers/">
-                                                <span class="nav-icon">
+              <span class="nav-link-text">Settings</span>
+            </a>
+            <!--//nav-link-->
+          </li>
+          <!--//nav-item-->
+          <li class="nav-item">
+            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+            <a
+              class="nav-link"
+              href="https://themes.3rdwavemedia.com/bootstrap-templates/admin-dashboard/portal-free-bootstrap-admin-dashboard-template-for-developers/"
+            >
+              <span class="nav-icon">
                 <svg
                   width="1em"
                   height="1em"
@@ -332,15 +363,18 @@ router.url !== '/404error'
                   />
                 </svg>
               </span>
-                                                <span class="nav-link-text">Download</span>
-                                            </a>
-                                            <!--//nav-link-->
-                                        </li>
-                                        <!--//nav-item-->
-                                        <li class="nav-item">
-                                            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                                            <a class="nav-link" href="https://themes.3rdwavemedia.com/bootstrap-templates/admin-dashboard/portal-free-bootstrap-admin-dashboard-template-for-developers/">
-                                                <span class="nav-icon">
+              <span class="nav-link-text">Download</span>
+            </a>
+            <!--//nav-link-->
+          </li>
+          <!--//nav-item-->
+          <li class="nav-item">
+            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+            <a
+              class="nav-link"
+              href="https://themes.3rdwavemedia.com/bootstrap-templates/admin-dashboard/portal-free-bootstrap-admin-dashboard-template-for-developers/"
+            >
+              <span class="nav-icon">
                 <svg
                   width="1em"
                   height="1em"
@@ -359,17 +393,17 @@ router.url !== '/404error'
                   />
                 </svg>
               </span>
-                                                <span class="nav-link-text">License</span>
-                                            </a>
-                                            <!--//nav-link-->
-                                        </li>
-                                        <!--//nav-item-->
-                                    </ul>
-                                    <!--//footer-menu-->
-                                </nav>
-                            </div>
-                            <!--//app-sidepanel-footer-->
-                        </div>
-                        <!--//sidepanel-inner-->
-            </div>
-            <!--//app-sidepanel-->
+              <span class="nav-link-text">License</span>
+            </a>
+            <!--//nav-link-->
+          </li>
+          <!--//nav-item-->
+        </ul>
+        <!--//footer-menu-->
+      </nav>
+    </div>
+    <!--//app-sidepanel-footer-->
+  </div>
+  <!--//sidepanel-inner-->
+</div>
+<!--//app-sidepanel-->

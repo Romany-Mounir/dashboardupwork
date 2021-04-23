@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/services/user.service';
 import { AuthService } from './../../../services/auth.service';
 
 @Component({
@@ -14,10 +13,6 @@ export class SigninComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  //private userservic: UserService,
-  // Login(){
-  //  this.userservic.login("testtoken");
-  //    this.router.navigateByUrl('/overview');
-  // }
+
 
 }

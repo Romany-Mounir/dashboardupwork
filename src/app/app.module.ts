@@ -30,7 +30,6 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NotificationComponent } from './components/notification/notification.component';
-import { ProfileComponent } from './components/profile/profile.component';
 import { PreferencesComponent } from './components/preferences/preferences.component';
 import { SecurityComponent } from './components/security/security.component';
 import { PaymentMethodComponent } from './components/payment-method/payment-method.component';
@@ -41,7 +40,6 @@ import { NotificationSettingsComponent } from './components/notification-setting
 import { HelpComponent } from './pages/help/help.component';
 import { NotificationsComponent } from './pages/notifications/notifications.component';
 import { SettingsComponent } from './pages/settings/settings.component';
-import { AccountComponent } from './pages/account/account.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
@@ -52,7 +50,6 @@ import { ListsofadminsComponent } from './components/listsofadmins/listsofadmins
 import { CommonModule } from '@angular/common';
 import { EditadminComponent } from './components/editadmin/editadmin.component';
 import { Signup2Component } from './pages/signup2/signup2.component';
-import { AuthService } from './services/auth.service';
 import { SpecialaccountComponent } from './pages/specialaccount/specialaccount.component';
 import { Profile1Component } from './components/profile1/profile1.component';
 import { ResetpassformComponent } from './pages/resetpassform/resetpassform.component';
@@ -87,9 +84,7 @@ import { ResetpassformComponent } from './pages/resetpassform/resetpassform.comp
     HelpComponent,
     NotificationsComponent,
     SettingsComponent,
-    AccountComponent,
     NotificationComponent,
-    ProfileComponent,
     PreferencesComponent,
     SecurityComponent,
     PaymentMethodComponent,

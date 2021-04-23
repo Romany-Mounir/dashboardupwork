@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth.guard';
-import { AccountComponent } from './pages/account/account.component';
 import { ChartsComponent } from './pages/charts/charts.component';
 import { ErrorPageComponent } from './pages/external/error-page/error-page.component';
 import { ResetPaswordComponent } from './pages/external/reset-pasword/reset-pasword.component';
@@ -17,6 +16,7 @@ import { SpecialaccountComponent } from './pages/specialaccount/specialaccount.c
 import { ResetpassformComponent } from './pages/resetpassform/resetpassform.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/overview', pathMatch: 'full' },
   { path: 'overview', component: OverviewComponent, canActivate: [AuthGuard] },
   { path: 'orders', component: OrdersComponent, canActivate: [AuthGuard] },
   { path: 'charts', component: ChartsComponent, canActivate: [AuthGuard] },
@@ -28,15 +28,18 @@ const routes: Routes = [
   },
   { path: 'resetpassword', component: ResetPaswordComponent },
   { path: 'signin', component: SigninComponent },
-  { path: 'myaccount', component: AccountComponent, canActivate: [AuthGuard] },
+  {
+    path: 'myaccount',
+    component: SpecialaccountComponent,
+    canActivate: [AuthGuard],
+  },
   { path: 'help', component: HelpComponent, canActivate: [AuthGuard] },
   { path: '404error', component: ErrorPageComponent },
   { path: 'create', component: Signup2Component },
-  { path: 'list-admins', component: AccountComponent },
+  { path: 'list-admins', component:  SpecialaccountComponent },
   { path: 'update-admin/:id', component: SignupComponent },
   { path: 'myprofile', component: SpecialaccountComponent },
   { path: 'restform', component: ResetpassformComponent },
-  { path: '', redirectTo: '/overview', pathMatch: 'full' },
   { path: '**', redirectTo: '/404error' },
 ];
 

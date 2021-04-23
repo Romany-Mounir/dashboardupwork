@@ -1,7 +1,3 @@
-/* .auth-background-holder {
-  background: url("./../../../../assets/images/background/background-1.jpg") no-repeat center center;
-} */
-
 .auth-background-col {
   position: relative;
 }
@@ -63,6 +59,5 @@
 }
 
 .backgrounds {
-  background: url("./../../../assets/images/background/loginBg.png") no-repeat
-    center right;
+  background: url("./../../../assets/images/background/loginBg.png") no-repeat center right;
 }
