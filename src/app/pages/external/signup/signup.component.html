@@ -14,7 +14,6 @@
           <h2 class="auth-heading text-center mb-4">update to Upwork</h2>
           <div class="auth-form-container text-left mx-auto">
             <form
-              #frm
               [formGroup]="editForm"
               (ngSubmit)="onSubmit()"
               novalidate
@@ -25,26 +24,32 @@
                   type="text"
                   formControlName="name"
                   class="form-control"
-                  required
+                  [class.is-valid]="editForm.controls['name'].valid"
                 />
+                <div [hidden]="editForm.controls['name'].valid || editForm.controls['name'].untouched"
+                class="alert alert-danger">Name is required</div>
               </div>
-              <div class="email mb-3">
+              <!-- <div class="email mb-3">
                 <label>Email</label>
                 <input
                   type="email"
                   formControlName="email"
                   class="form-control"
-                  required
+                  [class.is-valid]="editForm.controls['email'].valid"
                 />
-              </div>
+                <div [hidden]="editForm.controls['email'].valid || editForm.controls['email'].untouched"
+                class="alert alert-danger">Email is required</div>
+              </div> -->
               <div class="email mb-3">
                 <label>Phone</label>
                 <input
-                  type="number"
+                  type="text"
                   formControlName="phone"
                   class="form-control"
-                  required
+                  [class.is-valid]="editForm.controls['phone'].valid"
                 />
+                <div [hidden]="editForm.controls['phone'].valid || editForm.controls['phone'].untouched"
+                class="alert alert-danger">Phone is required</div>
               </div>
               <!-- <div class="password mb-3">
                 <label>Password</label>
@@ -52,8 +57,10 @@
                   type="text"
                   formControlName="password"
                   class="form-control"
-                  required
+                [class.is-valid]="editForm.controls['password'].valid"
                 />
+                 <div [hidden]="editForm.controls['password'].valid || editForm.controls['password'].untouched"
+                class="alert alert-danger">Password is required</div>
               </div> -->
 
               <!-- <div class="email mb-3">
@@ -87,6 +94,7 @@
                 <button
                   type="submit"
                   class="btn app-btn-primary btn-block theme-btn mx-auto"
+                  [disabled]="editForm.invalid"
                 >
                   Sign Up
                 </button>

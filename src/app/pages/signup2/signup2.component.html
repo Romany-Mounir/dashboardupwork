@@ -20,8 +20,10 @@
                   type="text"
                   formControlName="name"
                   class="form-control"
-                  required
+                  [class.is-valid]="adminForm.controls['name'].valid"
                 />
+                <div [hidden]="adminForm.controls['name'].valid || adminForm.controls['name'].untouched"
+                class="alert alert-danger">Name is required</div>
               </div>
               <div class="email mb-2">
                 <label>Email</label>
@@ -29,28 +31,32 @@
                   type="email"
                   formControlName="email"
                   class="form-control"
-                  #email
-                  required
+                  [class.is-valid]="adminForm.controls['email'].valid"
                 />
+                <div [hidden]="adminForm.controls['email'].valid || adminForm.controls['email'].untouched"
+                class="alert alert-danger">Email is required</div>
               </div>
               <div class="email mb-2">
                 <label>Phone</label>
                 <input
-                  type="number"
+                  type="text"
                   formControlName="phone"
                   class="form-control"
-                  required
+                  [class.is-valid]="adminForm.controls['phone'].valid"
                 />
+                <div [hidden]="adminForm.controls['phone'].valid || adminForm.controls['phone'].untouched"
+                class="alert alert-danger">Phone is required</div>
               </div>
               <div class="password mb-2">
                 <label>Password</label>
                 <input
-                  type="string"
+                  type="text"
                   formControlName="password"
                   class="form-control"
-                  #password
-                  required
+                  [class.is-valid]="adminForm.controls['password'].valid"
                 />
+                <div [hidden]="adminForm.controls['password'].valid || adminForm.controls['password'].untouched"
+                class="alert alert-danger">Password is required</div>
               </div>
 
 
@@ -75,7 +81,7 @@
                 <button
                   type="submit"
                   class="btn app-btn-primary btn-block theme-btn mx-auto"
-                  [disabled]="!adminForm.valid"
+                  [disabled]="adminForm.invalid"
                 >
                   Sign Up
                 </button>

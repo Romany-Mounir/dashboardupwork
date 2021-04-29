@@ -11,7 +11,7 @@ export class EditadminService {
   updateAdmin(admin: Admins, id) {
     return this.angularFirestore.collection('Admins').doc(id).update({
       name: admin.name,
-      email: admin.email,
+      // email: admin.email,
       phone: admin.phone,
       // password:admin.password,
     });
