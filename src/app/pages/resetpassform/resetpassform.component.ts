@@ -6,7 +6,7 @@ import {
 } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { EditadminService } from 'src/app/services/editadmin.service';
@@ -33,14 +33,14 @@ export class ResetpassformComponent implements OnInit, AfterViewInit {
     private router: Router
   ) {
     this.editForm = this.formBuilder.group({
-      password: [''],
+      password: ['',[Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$')]],
     });
   }
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {}
 
-  Changepassword() {
+  ChangePassword() {
     this.afs
       .collection('Admins')
       .get()
@@ -60,6 +60,5 @@ export class ResetpassformComponent implements OnInit, AfterViewInit {
         });
       });
   }
-
-  onSubmit() {}
+  onSubmit(){}
 }
