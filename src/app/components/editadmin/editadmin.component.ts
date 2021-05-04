@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { EditadminService } from 'src/app/services/editadmin.service';
 import { Router, ActivatedRoute } from "@angular/router";
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { AdminsService } from 'src/app/services/adminsservices/admins.service';
 
 @Component({
   selector: 'app-editadmin',
@@ -14,14 +14,13 @@ export class EditadminComponent implements OnInit {
   adminRef: any
 
   constructor(
-    public adminService:EditadminService,
+    public adminService: AdminsService,
     public formBuilder: FormBuilder,
     private act: ActivatedRoute,
     private router: Router
   ) {
     this.editForm = this.formBuilder.group({
       name: [''],
-      email: [''],
       phone: [''],
       password:[''],
     })

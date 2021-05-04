@@ -25,6 +25,7 @@
                 <div [hidden]="adminForm.controls['name'].valid || adminForm.controls['name'].untouched"
                 class="alert alert-danger">Name is required</div>
               </div>
+
               <div class="email mb-2">
                 <label>Email</label>
                 <input
@@ -36,6 +37,7 @@
                 <div [hidden]="adminForm.controls['email'].valid || adminForm.controls['email'].untouched"
                 class="alert alert-danger">Email is required</div>
               </div>
+
               <div class="email mb-2">
                 <label>Phone</label>
                 <input
@@ -47,6 +49,7 @@
                 <div [hidden]="adminForm.controls['phone'].valid || adminForm.controls['phone'].untouched"
                 class="alert alert-danger">Phone is required</div>
               </div>
+
               <div class="password mb-2">
                 <label>Password</label>
                 <input
@@ -57,6 +60,21 @@
                 />
                 <div [hidden]="adminForm.controls['password'].valid || adminForm.controls['password'].untouched"
                 class="alert alert-danger">Password is required</div>
+              </div>
+
+
+              <div class="email mb-2">
+                <label>Img URL</label>
+                <input
+                  type="file"
+                  formControlName="imgurl"
+                  class="form-control"
+                  (change)="onFileSelected($event)"
+                  accept=".png,.jpg"
+                  autocomplete="off"
+                />
+                <!-- <div [hidden]="adminForm.controls['imgurl'].valid || adminForm.controls['imgurl'].untouched"
+                class="alert alert-danger">Imgurl is required</div> -->
               </div>
 
 

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GetadminsService } from 'src/app/services/getadmins.service';
-import { Admins } from './../../ViewModels/admins';
-import { DeleteadminService } from './../../services/deleteadmin.service';
+import { AdminsService } from 'src/app/services/adminsservices/admins.service';
+import { Admins } from '../../models/admins';
 
 @Component({
   selector: 'app-listsofadmins',
@@ -12,7 +11,7 @@ export class ListsofadminsComponent implements OnInit {
 
   Admins: Admins[];
 
-  constructor(private adminService:  GetadminsService,private deleteservice:DeleteadminService) { }
+  constructor(private adminService:AdminsService) { }
 
   ngOnInit() {
     this.adminService.getAdminList().subscribe(res => {
@@ -25,7 +24,7 @@ export class ListsofadminsComponent implements OnInit {
     });    
   }
 
-  removeAdmin = admin => this.deleteservice.deleteAdmin(admin);
+  removeAdmin = admin => this.adminService.deleteAdmin(admin);
 }
 
 

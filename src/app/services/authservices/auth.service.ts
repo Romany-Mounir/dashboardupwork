@@ -5,9 +5,8 @@ import { firebase } from '@firebase/app';
 import '@firebase/auth';
 import {
   AngularFirestore,
-  AngularFirestoreDocument,
 } from '@angular/fire/firestore';
-import { AddadminService } from './addadmin.service';
+import { AdminsService } from '../adminsservices/admins.service';
 
 @Injectable({
   providedIn: 'root',
@@ -19,15 +18,16 @@ export class AuthService {
     private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
     private router: Router,
-    private addadmin: AddadminService
+    private addadmin: AdminsService,
   ) {}
 
   // Sign up with email/password
-  SignUp(email, password, admin) {
+  SignUp(email, password, data) {
     return this.afAuth
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {
-        this.addadmin.createAdmin({ ...admin, uid: result.user.uid });
+        this.addadmin.createAdmin({ ...data, uid: result.user.uid });
+
       })
       .catch((error) => {
         window.alert(error.message);
@@ -70,20 +70,7 @@ export class AuthService {
       });
   }
 
-  //  updatepassword(pass){
-  //   firebase.auth().currentUser.updatePassword(pass).then(
-  //     res =>
-  //     {
-  //       console.log(res);
-  //     }
-  //   ).catch(
-  //     err =>
-  //     {
-  //       console.log(err);
-  //     }
-  //   )
 
-  //  }
 
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
@@ -97,8 +84,5 @@ export class AuthService {
     });
   }
 
-  // getdocdata(){
-  //      JSON.parse(localStorage.getItem('user'));
 
-  // }
 }

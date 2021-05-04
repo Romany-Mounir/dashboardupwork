@@ -8,9 +8,9 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
-import { EditadminService } from 'src/app/services/editadmin.service';
+import { AuthService } from 'src/app/services/authservices/auth.service';
 import { firebase } from '@firebase/app';
+import { AdminsService } from 'src/app/services/adminsservices/admins.service';
 
 @Component({
   selector: 'app-resetpassform',
@@ -25,7 +25,7 @@ export class ResetpassformComponent implements OnInit, AfterViewInit {
   constructor(
     public afAuth: AngularFireAuth,
     private afs: AngularFirestore,
-    public adminService: EditadminService,
+    public adminService:  AdminsService,
     private cdr: ChangeDetectorRef,
     public Auth: AuthService,
     public formBuilder: FormBuilder,
@@ -47,7 +47,6 @@ export class ResetpassformComponent implements OnInit, AfterViewInit {
       .subscribe((docs) => {
         docs.forEach((doc) => {
           if (doc.data().uid === firebase.auth().currentUser.uid) {
-            console.log('hello');
             console.log(this.editForm.get('password'));
             this.afs
               .collection('Admins')

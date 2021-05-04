@@ -17,6 +17,7 @@ import { SpecialaccountComponent } from './pages/specialaccount/specialaccount.c
 import { ResetpassformComponent } from './pages/resetpassform/resetpassform.component';
 import { TalentListComponent } from './pages/talent-list/talent-list.component';
 
+
 const routes: Routes = [
   { path: '', redirectTo: '/overview', pathMatch: 'full' },
   { path: 'overview', component: OverviewComponent, canActivate: [AuthGuard] },

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { AddadminService } from './../../services/addadmin.service';
+import { AdminsService } from 'src/app/services/adminsservices/admins.service';
 
 @Component({
   selector: 'app-addadmin',
@@ -12,7 +12,7 @@ export class AddadminComponent implements OnInit {
   public adminForm: FormGroup;
 
   constructor(
-    public adminService: AddadminService,
+    public adminService:  AdminsService,
     public formBuilder: FormBuilder,
   ) { 
     this.adminForm = this.formBuilder.group({
@@ -20,6 +20,7 @@ export class AddadminComponent implements OnInit {
       email: [''],
       phone: [],
       password: [''],
+      imgurl:[''],
     })      
   }
 
@@ -29,5 +30,9 @@ export class AddadminComponent implements OnInit {
   onSubmit() {
     this.adminService.createAdmin(this.adminForm.value);
    };
+   onFileSelected($event)
+   {
+
+   }
 }
 

@@ -9,9 +9,9 @@ import {
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { EditadminService } from 'src/app/services/editadmin.service';
 import { firebase } from '@firebase/app';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthService } from 'src/app/services/authservices/auth.service';
+import { AdminsService } from 'src/app/services/adminsservices/admins.service';
 
 @Component({
   selector: 'app-profile1',
@@ -23,7 +23,7 @@ export class Profile1Component implements OnInit, AfterViewInit, OnChanges {
   constructor(
     public afAuth: AngularFireAuth,
     private db: AngularFirestore,
-    public adminService: EditadminService,
+    public adminService:  AdminsService,
     private auth: AuthService,
     private cdr: ChangeDetectorRef
   ) {}

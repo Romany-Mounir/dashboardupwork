@@ -1,8 +1,6 @@
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
-
-// import { environment } from './../environments/environment.prod';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -59,6 +57,11 @@ import { SpecialaccountComponent } from './pages/specialaccount/specialaccount.c
 import { Profile1Component } from './components/profile1/profile1.component';
 import { ResetpassformComponent } from './pages/resetpassform/resetpassform.component';
 import { OrdersComponent } from './pages/orders/orders.component';
+import {
+  AngularFireStorageModule,
+  AngularFireStorageReference,
+  AngularFireUploadTask,
+} from "@angular/fire/storage";
 
 @NgModule({
   declarations: [
@@ -111,6 +114,7 @@ import { OrdersComponent } from './pages/orders/orders.component';
     SpecialaccountComponent,
     Profile1Component,
     ResetpassformComponent,
+  
   ],
   imports: [
   AngularFireDatabaseModule,
@@ -122,7 +126,7 @@ import { OrdersComponent } from './pages/orders/orders.component';
   ReactiveFormsModule,
   AngularFireDatabaseModule,
   AngularFirestoreModule,
-
+  AngularFireStorageModule,  
 ],
   exports: [CommonModule, FormsModule, ReactiveFormsModule],
   providers: [],
