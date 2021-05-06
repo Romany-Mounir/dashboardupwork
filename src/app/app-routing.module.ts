@@ -44,7 +44,7 @@ const routes: Routes = [
   { path: 'myprofile', component: SpecialaccountComponent },
   { path: 'restform', component: ResetpassformComponent },
   {path:'clientlist',component:ClientListComponent,canActivate:[AuthGuard]},
-{path:'talentlist',component:TalentListComponent,canActivate:[AuthGuard]},
+  {path:'talentlist',component:TalentListComponent,canActivate:[AuthGuard]},
   { path: '**', redirectTo: '/404error' },
 ];
 

@@ -27,7 +27,7 @@ export class Signup2Component implements OnInit {
    private storage: AngularFireStorage,
   ) { 
     this.adminForm = this.formBuilder.group({
-      name: ['', [Validators.required,Validators.minLength(7),Validators.maxLength(12)]],
+      name: ['', [Validators.required,,Validators.minLength(3),Validators.maxLength(20)]],
       email: ['',[Validators.required,Validators.email]],
       phone: [ ,[Validators.required,Validators.maxLength(11), Validators.pattern("^((\\+91-?)|0)?[0-9]{11}$")]],
       password: ['',[Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$')]],

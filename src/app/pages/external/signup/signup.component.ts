@@ -21,9 +21,8 @@ export class SignupComponent implements OnInit {
     private router: Router
   ) {
     this.editForm = this.formBuilder.group({
-      name: ['', [Validators.required,Validators.minLength(7),Validators.maxLength(12)]],
+      name: ['', [Validators.required,Validators.minLength(3),Validators.maxLength(20)]],
       phone: [ ,[Validators.required,Validators.maxLength(11), Validators.pattern("^((\\+91-?)|0)?[0-9]{11}$")]],
-      // imgUrl:[''],
     })
   }
 
@@ -35,7 +34,6 @@ export class SignupComponent implements OnInit {
       this.editForm = this.formBuilder.group({
         name: [this.adminRef.name],
         phone: [this.adminRef.phone],
-        // imgUrl:[this.adminRef.imgUrl],
       })      
     })
   }

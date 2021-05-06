@@ -24,7 +24,7 @@
                   [class.is-valid]="editForm.controls['password'].valid"
                 />
                 <div [hidden]="editForm.controls['password'].valid || editForm.controls['password'].untouched"
-                class="alert alert-danger">Password is required</div>
+                class="alert alert-danger">Password must be at least 9 characters and have special characters</div>
               </div>
               <div class="extra mt-3 row justify-content-between">
                 <div class="col-6">

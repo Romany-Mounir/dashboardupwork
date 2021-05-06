@@ -3,9 +3,7 @@
     *ngIf="
       router.url !== '/resetpassword' &&
       router.url !== '/404error' &&
-      router.url !== '/signup'&&
-      router.url !== '/create' &&
-      router.url !== '/update-admin/:id'
+      router.url !== '/create' 
     "
   >
     <header class="app-header fixed-top">
@@ -18,9 +16,8 @@
       'app-wrapper':
         router.url !== '/resetpassword' &&
         router.url !== '/404error' &&
-        router.url !== '/signup' &&
-        router.url !== '/create' &&
-        router.url !== '/update-admin/:id'
+        router.url !== '/create' 
+        
     }"
   >
     <router-outlet></router-outlet>
@@ -29,10 +26,7 @@
     *ngIf="
       router.url !== '/resetpassword' &&
       router.url !== '/404error' &&
-      router.url !== '/signup' &&
-      router.url !== '/create' &&
-      router.url !== '/list-admins' &&
-      router.url !== '/update-admin/:id'
+      router.url !== '/create' 
     "
   >
     <app-footer></app-footer>
