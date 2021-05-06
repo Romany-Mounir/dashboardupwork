@@ -12,18 +12,19 @@
             /></a>
           </div>
           <h2 class="auth-heading text-center mb-5">Reset password Upwork</h2>
-          <div class="auth-form-container text-left">
+          <div class="auth-form-container text-left mx-auto">
             <form [formGroup]="editForm" (ngSubmit)="onSubmit()" novalidate>
               <!--//form-group-->
-              <div class="password mb-2">
+              <div class="email mb-2">
                 <label>Password</label>
                 <input
-                  type="string"
+                  type="text"
                   formControlName="password"
-                  class="form-control"
-                  #password
-                  required
+                  class="form-control shadow-none"
+                  [class.is-valid]="editForm.controls['password'].valid"
                 />
+                <div [hidden]="editForm.controls['password'].valid || editForm.controls['password'].untouched"
+                class="alert alert-danger">Password must be at least 9 characters and have special characters</div>
               </div>
               <div class="extra mt-3 row justify-content-between">
                 <div class="col-6">
@@ -53,7 +54,8 @@
                 <button
                   type="button"
                   class="btn app-btn-primary btn-block theme-btn mx-auto"
-                  (click)="Changepassword()"
+                  [disabled]="editForm.invalid"
+                  (click)=" ChangePassword()"
                 >
                   Log In
                 </button>

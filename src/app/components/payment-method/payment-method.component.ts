@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DeleteadminService } from 'src/app/services/deleteadmin.service';
-import { GetadminsService } from 'src/app/services/getadmins.service';
-import { Admins } from 'src/app/ViewModels/admins';
+import { Admins } from 'src/app/models/admins';
 import { firebase } from '@firebase/app';
+import { AdminsService } from 'src/app/services/adminsservices/admins.service';
 
 @Component({
   selector: 'app-payment-method',
@@ -11,7 +10,7 @@ import { firebase } from '@firebase/app';
 })
 export class PaymentMethodComponent implements OnInit {  
   Admins: Admins[];
-  constructor(private adminService:  GetadminsService,private deleteservice:DeleteadminService) { }
+  constructor(private adminService:  AdminsService) { }
 
   ngOnInit() {
     this.adminService.getAdminList().subscribe(res => {
@@ -25,5 +24,5 @@ export class PaymentMethodComponent implements OnInit {
       })
     });    
   }
-  removeAdmin = admin => this.deleteservice.deleteAdmin(admin);
+  removeAdmin = admin => this.adminService.deleteAdmin(admin);
 }
