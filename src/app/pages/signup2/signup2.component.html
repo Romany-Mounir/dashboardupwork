@@ -19,7 +19,7 @@
                 <input
                   type="text"
                   formControlName="name"
-                  class="form-control"
+                  class="form-control shadow-none"
                   [class.is-valid]="adminForm.controls['name'].valid"
                 />
                 <div [hidden]="adminForm.controls['name'].valid || adminForm.controls['name'].untouched"
@@ -31,7 +31,7 @@
                 <input
                   type="email"
                   formControlName="email"
-                  class="form-control"
+                  class="form-control shadow-none"
                   [class.is-valid]="adminForm.controls['email'].valid"
                 />
                 <div [hidden]="adminForm.controls['email'].valid || adminForm.controls['email'].untouched"
@@ -43,7 +43,7 @@
                 <input
                   type="text"
                   formControlName="phone"
-                  class="form-control"
+                  class="form-control shadow-none"
                   [class.is-valid]="adminForm.controls['phone'].valid"
                 />
                 <div [hidden]="adminForm.controls['phone'].valid || adminForm.controls['phone'].untouched"
@@ -55,7 +55,7 @@
                 <input
                   type="text"
                   formControlName="password"
-                  class="form-control"
+                  class="form-control shadow-none"
                   [class.is-valid]="adminForm.controls['password'].valid"
                 />
                 <div [hidden]="adminForm.controls['password'].valid || adminForm.controls['password'].untouched"
@@ -68,7 +68,7 @@
                 <input
                   type="file"
                   formControlName="imgurl"
-                  class="form-control"
+                  class="form-control shadow-none"
                   (change)="onFileSelected($event)"
                   accept=".png,.jpg"
                   autocomplete="off"

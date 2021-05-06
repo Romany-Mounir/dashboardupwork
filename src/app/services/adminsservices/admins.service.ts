@@ -35,7 +35,6 @@ export class AdminsService {
       return this.angularFirestore.collection('Admins').doc(id).update({
         name: admin.name,
         phone: admin.phone,
-       
       });
     }
     getAdminDoc(id) {

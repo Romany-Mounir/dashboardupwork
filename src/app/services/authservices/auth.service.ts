@@ -46,7 +46,9 @@ export class AuthService {
             docs.forEach((doc) => {
               if (doc.data().uid === firebase.auth().currentUser.uid) {
                 console.log(doc.data());
+                console.log(doc.id);
                 localStorage.setItem('user', JSON.stringify(doc.data()));
+                localStorage.setItem('doc',JSON.stringify(doc.id));
                 window.location.reload();
               }
             });

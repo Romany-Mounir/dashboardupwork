@@ -19,7 +19,7 @@
                 <input
                   type="email"
                   formControlName="email"
-                  class="form-control"
+                  class="form-control shadow-none"
                   [class.is-valid]="loginForm.controls['email'].valid"
                 />
                 <div [hidden]="loginForm.controls['email'].valid || loginForm.controls['email'].untouched"
@@ -31,7 +31,7 @@
                 <input
                   type="text"
                   formControlName="password"
-                  class="form-control"
+                  class="form-control shadow-none"
                   [class.is-valid]="loginForm.controls['password'].valid"
                 />
                    <div [hidden]="loginForm.controls['password'].valid || loginForm.controls['password'].untouched"
