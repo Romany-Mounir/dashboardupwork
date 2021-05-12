@@ -8,7 +8,13 @@ import { AuthService } from 'src/app/services/authservices/auth.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  adminRef?: any;
+
   constructor(public router: Router, public authService: AuthService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.adminRef = JSON.parse(localStorage.getItem('user'));
+    console.log(this.adminRef);
+
+  }
 }
