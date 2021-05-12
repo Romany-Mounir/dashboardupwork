@@ -14,8 +14,8 @@ export class DoughnutChartComponent {
     this.donutColors =[
       {
         backgroundColor: [
-          '#4BCE5E',
-        'rgba(118, 183, 172, 1)',
+          '#6fda44',
+        '#094456',
         '#2986FF',
         'rgba(129, 78, 40, 1)',
         '#FFFFFF'
@@ -25,9 +25,9 @@ export class DoughnutChartComponent {
     ];
   }
 
-  doughnutChartLabels: Label[] = ['Green', 'Gray', 'Blue'];
+  doughnutChartLabels: Label[] = ['JavaScript', 'CSS', 'HTML'];
   doughnutChartData: MultiDataSet = [
-    [53, 30, 17]
+    [94.1, 5.6, 0.3]
   ];
   doughnutChartType: ChartType = 'doughnut';
   // doughnutChartColors: Color[] = [
