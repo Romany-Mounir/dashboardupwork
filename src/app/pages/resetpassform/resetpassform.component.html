@@ -17,15 +17,23 @@
               <!--//form-group-->
               <div class="email mb-2">
                 <label>Password</label>
+                <div class="input-group">
                 <input
                   type="text"
                   formControlName="password"
                   class="form-control shadow-none"
                   [class.is-valid]="editForm.controls['password'].valid"
                 />
+                <div class="input-group-append">
+                  <span class="input-group-text">
+                    <i class="fa fa-eye-slash"></i>
+                  </span>
+               </div>
                 <div [hidden]="editForm.controls['password'].valid || editForm.controls['password'].untouched"
                 class="alert alert-danger">Password must be at least 9 characters and have special characters</div>
               </div>
+              </div>
+              
               <div class="extra mt-3 row justify-content-between">
                 <div class="col-6">
                   <div class="form-check">

@@ -52,16 +52,23 @@
 
               <div class="password mb-2">
                 <label>Password</label>
+                <div class="input-group">
                 <input
-                  type="text"
+                  type="password"
                   formControlName="password"
                   class="form-control shadow-none"
                   [class.is-valid]="adminForm.controls['password'].valid"
                 />
+                <div class="input-group-append">
+                  <span class="input-group-text">
+                    <i class="fa fa-eye-slash"></i>
+                  </span>
+               </div>
                 <div [hidden]="adminForm.controls['password'].valid || adminForm.controls['password'].untouched"
                 class="alert alert-danger">Password must be at least 9 characters and have special characters</div>
               </div>
-
+             </div>
+             
 
               <div class="email mb-2">
                 <label>Img URL</label>
@@ -110,9 +117,9 @@
           <!--//auth-form-container-->
         </div>
         <!--//auth-body-->
-        <div class="app-auth-footer">
+        <!-- <div class="app-auth-footer">
           <app-footer></app-footer>
-        </div>
+        </div> -->
       </div>
     </div>
 

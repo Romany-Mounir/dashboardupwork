@@ -27,7 +27,6 @@ export class AuthService {
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {
         this.addadmin.createAdmin({ ...data, uid: result.user.uid });
-
       })
       .catch((error) => {
         window.alert(error.message);
@@ -71,8 +70,6 @@ export class AuthService {
         window.alert(error);
       });
   }
-
-
 
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
