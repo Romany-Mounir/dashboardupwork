@@ -14,6 +14,7 @@ import { AuthService } from 'src/app/services/authservices/auth.service';
 export class Signup2Component implements OnInit {
 
   public adminForm: FormGroup;
+  public fieldTextType: boolean;
   public selectedFile;
   public ref;
   public downloadURL;
@@ -72,6 +73,9 @@ export class Signup2Component implements OnInit {
         console.log(url);
       }
     });
+}
+toggleFieldTextType() {
+  this.fieldTextType = !this.fieldTextType;
 }
    
 

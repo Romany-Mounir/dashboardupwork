@@ -3,7 +3,8 @@
     *ngIf="
       router.url !== '/resetpassword' &&
       router.url !== '/404error' &&
-      router.url !== '/create' 
+      router.url !== '/create' &&
+     router.url !== '/restform'
     "
   >
     <header class="app-header fixed-top">
@@ -16,7 +17,8 @@
       'app-wrapper':
         router.url !== '/resetpassword' &&
         router.url !== '/404error' &&
-        router.url !== '/create' 
+        router.url !== '/create'  &&
+         router.url !== '/restform'
         
     }"
   >
@@ -26,7 +28,8 @@
     *ngIf="
       router.url !== '/resetpassword' &&
       router.url !== '/404error' &&
-      router.url !== '/create' 
+      router.url !== '/create' &&
+       router.url !== '/restform'
     "
   >
     <app-footer></app-footer>

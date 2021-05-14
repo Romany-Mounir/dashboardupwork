@@ -19,14 +19,18 @@
                 <label>Password</label>
                 <div class="input-group">
                 <input
-                  type="text"
+                  [type]="fieldTextType ? 'text' : 'password'"
                   formControlName="password"
                   class="form-control shadow-none"
                   [class.is-valid]="editForm.controls['password'].valid"
                 />
                 <div class="input-group-append">
                   <span class="input-group-text">
-                    <i class="fa fa-eye-slash"></i>
+                    <i class="fa"  [ngClass]="{
+                      'fa-eye-slash': !fieldTextType,
+                      'fa-eye': fieldTextType
+                    }"
+                    (click)="toggleFieldTextType()"></i>
                   </span>
                </div>
                 <div [hidden]="editForm.controls['password'].valid || editForm.controls['password'].untouched"

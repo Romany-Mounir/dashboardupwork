@@ -10,6 +10,8 @@ import { AuthService } from '../../../services/authservices/auth.service';
 })
 export class SigninComponent implements OnInit {
   public loginForm: FormGroup;
+  public fieldTextType: boolean;
+
   constructor(private router: Router, public AuthenticationService: AuthService,public formBuilder: FormBuilder) { 
     this.loginForm = this.formBuilder.group({
       email: ['',[Validators.required,Validators.email]],
@@ -26,5 +28,7 @@ export class SigninComponent implements OnInit {
      this.AuthenticationService.SignIn(email,pass);
    }
 
-
+   toggleFieldTextType() {
+    this.fieldTextType = !this.fieldTextType;
+  }
 }

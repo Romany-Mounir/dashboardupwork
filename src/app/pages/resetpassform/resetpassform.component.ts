@@ -19,6 +19,7 @@ import { AdminsService } from 'src/app/services/adminsservices/admins.service';
 })
 export class ResetpassformComponent implements OnInit, AfterViewInit {
   adminRef?: any;
+  public fieldTextType: boolean;
   ids?: any;
   public editForm: FormGroup;
 
@@ -60,4 +61,8 @@ export class ResetpassformComponent implements OnInit, AfterViewInit {
       });
   }
   onSubmit(){}
+
+  toggleFieldTextType() {
+    this.fieldTextType = !this.fieldTextType;
+  }
 }
