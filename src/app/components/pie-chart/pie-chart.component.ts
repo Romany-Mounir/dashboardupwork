@@ -26,9 +26,9 @@ export class PieChartComponent {
     },
   };
 
-  pieChartLabels: Label[] = ['green', 'blue', 'gray'];
+  pieChartLabels: Label[] = ['TypeScript', 'HTML', 'CSS',"JavaScript"];
 
-  pieChartData: number[] = [45, 12, 43];
+  pieChartData: number[] = [18.8, 31.4, 49.3,0.5];
 
   pieChartType: ChartType = 'pie';
 
@@ -38,7 +38,7 @@ export class PieChartComponent {
 
   pieChartColors = [
     {
-      backgroundColor: ['#4BCE5E', '#5B99EA', '#8AA1C7'],
+      backgroundColor: ['#4BCE5E', '#5B99EA', '#8AA1C7',"blue"],
     },
   ];
 }

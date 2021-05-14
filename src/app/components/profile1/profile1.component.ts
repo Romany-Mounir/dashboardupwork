@@ -27,8 +27,8 @@ export class Profile1Component implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.adminRef = JSON.parse(localStorage.getItem('user'));
-    console.log(this.adminRef.uid);
+    //console.log(this.adminRef);
     this.iddoc= JSON.parse(localStorage.getItem('doc'));
-    console.log(this.iddoc);
+    //console.log(this.iddoc+"==========");
   }
 }
