@@ -13,12 +13,16 @@ import { AdminsService } from '../adminsservices/admins.service';
 })
 export class AuthService {
   userData: any;
+  public errormsg :string;
+  public errormsg2 :string;
+  public errormsg3 : string;
 
   constructor(
     private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
     private router: Router,
     private addadmin: AdminsService,
+    
   ) {}
 
   // Sign up with email/password
@@ -28,8 +32,9 @@ export class AuthService {
       .then((result) => {
         this.addadmin.createAdmin({ ...data, uid: result.user.uid });
       })
-      .catch((error) => {
-        window.alert(error.message);
+       .catch((error) => {
+        this.errormsg= error.message;
+       // window.alert(error.message);
       });
   }
 
@@ -55,7 +60,9 @@ export class AuthService {
         this.router.navigate(['/myprofile']);
       })
       .catch((error) => {
-        window.alert(error.message);
+        this.errormsg2=error.message;
+        //window.alert(error.message);
+        //console.log(error.message);
       });
   }
 
@@ -67,7 +74,8 @@ export class AuthService {
         this.router.navigate(['/restform']);
       })
       .catch((error) => {
-        window.alert(error);
+        this.errormsg3=error.message;
+        //window.alert(error);
       });
   }
 
@@ -82,6 +90,8 @@ export class AuthService {
       this.router.navigate(['signin']);
     });
   }
+  
 
+  
 
 }

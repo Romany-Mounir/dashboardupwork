@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminsService } from 'src/app/services/adminsservices/admins.service';
+import { AuthService } from 'src/app/services/authservices/auth.service';
 import { Admins } from '../../models/admins';
 
 @Component({
@@ -11,7 +12,7 @@ export class ListsofadminsComponent implements OnInit {
 
   Admins: Admins[];
 
-  constructor(private adminService:AdminsService) { }
+  constructor(private adminService:AdminsService,private auth:AuthService ) { }
 
   ngOnInit() {
     this.adminService.getAdminList().subscribe(res => {
@@ -24,7 +25,9 @@ export class ListsofadminsComponent implements OnInit {
     });    
   }
 
-  removeAdmin = admin => this.adminService.deleteAdmin(admin);
+  removeAdmin =(admin )=> {
+    this.adminService.deleteAdmin(admin);
+  }
 }
 
 

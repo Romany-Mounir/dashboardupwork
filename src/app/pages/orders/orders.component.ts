@@ -5,32 +5,46 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-orders',
   templateUrl: './orders.component.html',
-  styleUrls: ['./orders.component.css']
+  styleUrls: ['./orders.component.css'],
 })
 export class OrdersComponent implements OnInit {
-
-  jobs:Jobs[];
-
-  constructor(private jobServ: JobsService) { }
+  jobs: Jobs[];
+  hiredjobs: Jobs[];
+  Pendingjobs: Jobs[];
+  page: Number = 1;
+  total: Number;
+  constructor(private jobServ: JobsService) {}
 
   ngOnInit(): void {
-    this.jobServ.getJobs().subscribe((res)=>
-   this.jobs= res.map(
-      (e)=> {
-        console.log(e.payload.doc.data());
-        
-        return {
-          ...(e.payload.doc.data() as object)
-        } as Jobs;
-      }
-      
-      )
-      
-      )
-     console.log(this.jobs);
-     
-    
+    this.jobServ.getJobs().subscribe(
+      (res) =>
+        (this.jobs = res.map((e) => {
+          console.log(e.payload.doc.data());
+          return {
+            ...(e.payload.doc.data() as object),
+          } as Jobs;
+        }))
+    );
+    console.log(this.jobs);
 
+    this.jobServ.getJobsHired().subscribe(
+      (res) =>
+        (this.hiredjobs = res.map((e) => {
+          console.log(e.payload.doc.data());
+          return {
+            ...(e.payload.doc.data() as object),
+          } as Jobs;
+        }))
+    );
+
+    this.jobServ.getJobsPending().subscribe(
+      (res) =>
+        (this.Pendingjobs = res.map((e) => {
+          console.log(e.payload.doc.data());
+          return {
+            ...(e.payload.doc.data() as object),
+          } as Jobs;
+        }))
+    );
   }
-
 }

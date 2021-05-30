@@ -29,7 +29,7 @@ export class PieChartComponent {
   pieChartLabels: Label[] = ['TypeScript', 'HTML', 'CSS',"JavaScript"];
 
   pieChartData: number[] = [18.8, 31.4, 49.3,0.5];
-
+     
   pieChartType: ChartType = 'pie';
 
   pieChartLegend = true;

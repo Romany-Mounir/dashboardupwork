@@ -35,13 +35,12 @@ export class ClientService {
   }
 
   updateClient(client: Client, id) {
-    return this.angularFirestore
-      .collection('client')
-      .doc(id)
-      .update({
-        name: client.firstName + '  ' + client.lastName,
-        location: client.location,
-        paymentVerfied: client.paymentVerfied,
-      });
+    return this.angularFirestore.collection('client').doc(id).update({
+      firstName: client.firstName,
+      lastName: client.lastName,
+      password: client.password,
+      // location: client.location,
+      // paymentVerfied: client.paymentVerfied,
+    });
   }
 }

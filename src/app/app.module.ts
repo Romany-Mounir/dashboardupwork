@@ -14,7 +14,6 @@ import { DoughnutChartComponent } from './components/doughnut-chart/doughnut-cha
 import { ChartsModule } from 'ng2-charts';
 import { CardoverviewComponent } from './components/cardoverview/cardoverview.component';
 import { SearchselectformComponent } from './components/searchselectform/searchselectform.component';
-import { DocscComponent } from './components/docsc/docsc.component';
 import { ProgressComponent } from './components/progress/progress.component';
 import { StatlistComponent } from './components/statlist/statlist.component';
 import { CreateappComponent } from './components/createapp/createapp.component';
@@ -61,7 +60,11 @@ import {
   AngularFireStorageModule,
   AngularFireStorageReference,
   AngularFireUploadTask,
-} from "@angular/fire/storage";
+} from '@angular/fire/storage';
+import { TalentRequestsComponent } from './pages/talent-requests/talent-requests.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { EditclientComponent } from './pages/editclient/editclient.component';
+import { EdittalentComponent } from './pages/edittalent/edittalent.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +78,6 @@ import {
     DoughnutChartComponent,
     CardoverviewComponent,
     SearchselectformComponent,
-    DocscComponent,
     ProgressComponent,
     StatlistComponent,
     CreateappComponent,
@@ -114,20 +116,24 @@ import {
     SpecialaccountComponent,
     Profile1Component,
     ResetpassformComponent,
+    TalentRequestsComponent,
+    EditclientComponent,
+    EdittalentComponent,
   
   ],
   imports: [
-  AngularFireDatabaseModule,
-  BrowserModule,
-  AppRoutingModule,
-  ChartsModule,
-  FormsModule,
-  AngularFireModule.initializeApp(environment.firebase),
-  ReactiveFormsModule,
-  AngularFireDatabaseModule,
-  AngularFirestoreModule,
-  AngularFireStorageModule,  
-],
+    AngularFireDatabaseModule,
+    BrowserModule,
+    AppRoutingModule,
+    ChartsModule,
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    ReactiveFormsModule,
+    AngularFireDatabaseModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    NgxPaginationModule,
+  ],
   exports: [CommonModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],

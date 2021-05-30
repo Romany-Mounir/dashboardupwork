@@ -54,9 +54,9 @@
   height: 100vh;
 }
 
-.app-auth-wrapper .app-auth-body {
+/* .app-auth-wrapper .app-auth-body {
   width: 360px;
-}
+} */
 
 .app-logo .logo-icon {
   width: 60px;
@@ -64,6 +64,5 @@
 }
 
 .backgrounds {
-  background: url("../../../../assets/images/background/loginBg.png") no-repeat
-    center right;
+  background: url("../../../../assets/images/login.svg") no-repeat center right;
 }

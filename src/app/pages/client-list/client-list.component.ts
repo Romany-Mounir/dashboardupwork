@@ -5,23 +5,24 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-client-list',
   templateUrl: './client-list.component.html',
-  styleUrls: ['./client-list.component.css']
+  styleUrls: ['./client-list.component.css'],
 })
 export class ClientListComponent implements OnInit {
-  clients: Client[]
-  constructor(private clientService: ClientService) { }
+  clients: Client[];
+  page: Number = 1;
+  total: Number;
+  constructor(private clientService: ClientService) {}
 
   ngOnInit(): void {
     this.clientService.getClientList().subscribe((res) => {
-        this.clients = res.map((e) =>
-          {
-            return {
-              id: e.payload.doc.id,
-              ...(e.payload.doc.data() as object)
-            } as Client;
-          });
+      this.clients = res.map((e) => {
+        return {
+          id: e.payload.doc.id,
+          ...(e.payload.doc.data() as object),
+        } as Client;
       });
-  };
+    });
+  }
   deleteClient(client) {
     this.clientService.deleteClient(client);
   }

@@ -13,7 +13,10 @@
           </div>
           <h2 class="auth-heading text-center mb-5">Log in to Upwork</h2>
           <div class="auth-form-container text-left">
-            <form  [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+              <div class="alert alert-danger" role="alert" *ngIf="errormsg">
+                {{ errormsg }}
+              </div>
               <div class="email mb-2">
                 <label>Email</label>
                 <input
@@ -22,34 +25,43 @@
                   class="form-control shadow-none"
                   [class.is-valid]="loginForm.controls['email'].valid"
                 />
-                <div [hidden]="loginForm.controls['email'].valid || loginForm.controls['email'].untouched"
-                class="alert alert-danger">Email must be a valid email address</div>
+                <div
+                  [hidden]="
+                    loginForm.controls['email'].valid ||
+                    loginForm.controls['email'].untouched
+                  "
+                  class="alert alert-danger"
+                >
+                  Email must be a valid email address
+                </div>
               </div>
               <!--//form-group-->
               <div class="password mb-2">
                 <label>Password</label>
                 <div class="input-group">
-                <input
-                  [type]="fieldTextType ? 'text' : 'password'"
-                  formControlName="password"
-                  class="form-control shadow-none"
-                  [class.is-valid]="loginForm.controls['password'].valid"
-                />
-                <div class="input-group-append">
-                  <span class="input-group-text">
-                    <i class="fa"  [ngClass]="{
-                      'fa-eye-slash': !fieldTextType,
-                      'fa-eye': fieldTextType
-                    }"
-                    (click)="toggleFieldTextType()"></i>
-                  </span>
-               </div>
-                   <div [hidden]="loginForm.controls['password'].valid || loginForm.controls['password'].untouched"
-                  class="alert alert-danger">Password must be at least 9 characters and have special characters</div>
+                  <input
+                    [type]="fieldTextType ? 'text' : 'password'"
+                    formControlName="password"
+                    class="form-control shadow-none"
+                  />
+                  <div class="input-group-append">
+                    <span class="input-group-text">
+                      <i
+                        class="fa"
+                        [ngClass]="{
+                          'fa-eye-slash': !fieldTextType,
+                          'fa-eye': fieldTextType
+                        }"
+                        (click)="toggleFieldTextType()"
+                      ></i>
+                    </span>
+                  </div>
+                  <!-- <div [hidden]="loginForm.controls['password'].valid || loginForm.controls['password'].untouched"
+                  class="alert alert-danger">Password must be at least 9 characters and have special characters</div> -->
+                </div>
               </div>
-            </div>
-                <div class="extra mt-3 row justify-content-between">
-                  <div class="col-6">
+              <div class="extra my-3 row justify-content-end">
+                <!-- <div class="col-6">
                     <div class="form-check">
                       <input
                         class="form-check-input"
@@ -61,33 +73,33 @@
                         Remember me
                       </label>
                     </div>
+                  </div> -->
+                <!--//col-6-->
+                <div class="col-6">
+                  <div class="forgot-password text-right">
+                    <a routerLink="/resetpassword">Forgot password?</a>
                   </div>
-                  <!--//col-6-->
-                  <div class="col-6">
-                    <div class="forgot-password text-right">
-                      <a routerLink="/resetpassword">Forgot password?</a>
-                    </div>
-                  </div>
-                  <!--//col-6-->
                 </div>
-                <!--//extra-->
+                <!--//col-6-->
+              </div>
+              <!--//extra-->
               <!--//form-group-->
               <div class="text-center">
                 <button
                   type="submit"
                   class="btn app-btn-primary btn-block theme-btn mx-auto"
-                  >
+                >
                   Log In
                 </button>
               </div>
               <!-- [disabled]="loginForm.invalid" -->
             </form>
-        
 
+            <!-- 
             <div class="auth-option text-center pt-5 mb-5">
               No Account? Sign up
               <a class="text-link" routerLink="/create">here</a>.
-            </div>
+            </div> -->
           </div>
           <!--//auth-form-container-->
         </div>

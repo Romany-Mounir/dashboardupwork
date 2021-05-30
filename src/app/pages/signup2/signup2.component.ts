@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { FormBuilder, FormGroup,Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import * as firebase from 'firebase';
 import { finalize } from 'rxjs/operators';
 import { AdminsService } from 'src/app/services/adminsservices/admins.service';
 import { AuthService } from 'src/app/services/authservices/auth.service';
@@ -19,6 +21,7 @@ export class Signup2Component implements OnInit {
   public ref;
   public downloadURL;
   public fb;
+  public errormsg;
   constructor(
     public adminService:  AdminsService,
     public formBuilder: FormBuilder,
@@ -26,6 +29,7 @@ export class Signup2Component implements OnInit {
     private router: Router,
    public AuthenticationService: AuthService, 
    private storage: AngularFireStorage,
+   private afAuth: AngularFireAuth,
   ) { 
     this.adminForm = this.formBuilder.group({
       name: ['', [Validators.required,,Validators.minLength(3),Validators.maxLength(20)]],
@@ -49,9 +53,10 @@ export class Signup2Component implements OnInit {
       password:this.adminForm.get('password').value,
       imgProfile: this.fb,
   }
-   this.AuthenticationService.SignUp(email,pass,data);
+    this.AuthenticationService.SignUp(email,pass,data);
+    this.errormsg=this.AuthenticationService.errormsg;
   }
-  
+
   onFileSelected(event) {
     this.selectedFile=event.target.files[0];
     console.log(this.selectedFile);
@@ -77,6 +82,7 @@ export class Signup2Component implements OnInit {
 toggleFieldTextType() {
   this.fieldTextType = !this.fieldTextType;
 }
-   
+  
 
 }
+ 

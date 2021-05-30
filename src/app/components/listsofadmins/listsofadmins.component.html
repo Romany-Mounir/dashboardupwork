@@ -13,19 +13,18 @@
   <tbody>
     <tr *ngFor="let admin of Admins; let i = index">
       <th scope="row">{{ i + 1 }}</th>
-      <td>{{ admin.name }} </td>
-      <td><img src={{admin.imgProfile}} class="avatar" alt="Avatar"></td>
+      <td>{{ admin.name }}</td>
+      <td><img src="{{ admin.imgProfile }}" class="avatar" alt="Avatar" /></td>
       <td>{{ admin.email }}</td>
       <td>{{ admin.phone }}</td>
       <td>{{ admin.password }}</td>
       <td>
         <span (click)="removeAdmin(admin)" class="text-danger">Delete</span>
         &nbsp;
-        <span routerLink="/update-admin/{{ admin.id }}" class="text-primary"
+        <span routerLink="/update-admin/{{admin.id}}" class="text-primary"
           >Edit</span
         >
       </td>
     </tr>
   </tbody>
 </table>
-Markup
