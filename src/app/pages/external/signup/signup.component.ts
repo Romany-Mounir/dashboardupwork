@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AdminsService } from 'src/app/services/adminsservices/admins.service';
+import { NavbarService } from 'src/app/services/navbarservices/navbar.service';
 
 @Component({
   selector: 'app-signup',
@@ -16,7 +17,8 @@ export class SignupComponent implements OnInit {
     public adminService: AdminsService,
     public formBuilder: FormBuilder,
     private act: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    public nav: NavbarService
   ) {
     this.editForm = this.formBuilder.group({
       name: [
@@ -39,6 +41,7 @@ export class SignupComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.nav.hide();
     const id = this.act.snapshot.paramMap.get('id');
 
     this.adminService.getAdminDoc(id).subscribe((res) => {

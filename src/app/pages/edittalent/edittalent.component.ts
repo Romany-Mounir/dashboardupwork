@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NavbarService } from 'src/app/services/navbarservices/navbar.service';
+import { SidebarService } from 'src/app/services/sidebarservices/sidebar.service';
 import { TalentService } from 'src/app/services/talent.service';
 
 @Component({
@@ -16,7 +18,9 @@ export class EdittalentComponent implements OnInit {
     public talentService: TalentService,
     public formBuilder: FormBuilder,
     private act: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    public nav: NavbarService,
+    public side: SidebarService
   ) {
     this.editForm2 = this.formBuilder.group({
       firstName: [
@@ -40,6 +44,8 @@ export class EdittalentComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.nav.hide();
+    this.side.hide();
     const id = this.act.snapshot.paramMap.get('id');
     console.log(id);
     this.talentService.getTalentDoc(id).subscribe((res) => {

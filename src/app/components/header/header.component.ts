@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/authservices/auth.service';
+import { NavbarService } from 'src/app/services/navbarservices/navbar.service';
 
 @Component({
   selector: 'app-header',
@@ -10,11 +10,8 @@ import { AuthService } from 'src/app/services/authservices/auth.service';
 export class HeaderComponent implements OnInit {
   adminRef?: any;
 
-  constructor(public router: Router, public authService: AuthService) {}
+  constructor(public router: Router,  public nav: NavbarService ) {}
 
   ngOnInit(): void {
-    this.adminRef = JSON.parse(localStorage.getItem('user'));
-    console.log(this.adminRef);
-
   }
 }

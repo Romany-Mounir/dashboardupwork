@@ -1,10 +1,4 @@
-<div id="app-sidepanel" class="app-sidepanel">
-  <!-- *ngIf="
-router.url !== '/signin' &&
-router.url !== '/signup' &&
-router.url !== '/resetpassword' &&
-router.url !== '/404error'
-" -->
+<div id="app-sidepanel" class="app-sidepanel" *ngIf="side.visible">
   <div id="sidepanel-drop" class="sidepanel-drop"></div>
   <div class="sidepanel-inner d-flex flex-column">
     <a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none"
@@ -183,10 +177,14 @@ router.url !== '/404error'
                   >Talent Requests</a
                 >
               </li>
-              <!-- <li class="submenu-item">
-                <a class="submenu-link" routerLink="/notifications"
-                  routerLinkActive="router-link-active">Notifications</a>
-              </li> -->
+              <li class="submenu-item">
+                <a
+                  class="submenu-link"
+                  routerLink="/notifications"
+                  routerLinkActive="router-link-active"
+                  >Notifications</a
+                >
+              </li>
               <li class="submenu-item">
                 <a
                   class="submenu-link"
@@ -196,14 +194,14 @@ router.url !== '/404error'
                 >
               </li>
 
-              <li class="submenu-item">
+              <!-- <li class="submenu-item">
                 <a
                   class="submenu-link"
                   routerLink="/settings"
                   routerLinkActive="router-link-active"
                   >Settings</a
                 >
-              </li>
+              </li> -->
             </ul>
           </div>
         </li>
@@ -260,14 +258,14 @@ router.url !== '/404error'
             data-parent="#menu-accordion"
           >
             <ul class="submenu-list list-unstyled">
-              <li class="submenu-item">
+              <!-- <li class="submenu-item">
                 <a
                   class="submenu-link"
                   routerLink="/signin"
                   routerLinkActive="router-link-active"
                   >Login</a
                 >
-              </li>
+              </li> -->
               <li class="submenu-item">
                 <a
                   class="submenu-link"

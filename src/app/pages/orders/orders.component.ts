@@ -1,6 +1,8 @@
 import { Jobs } from './../../models/jobs';
 import { JobsService } from './../../services/jobs.service';
 import { Component, OnInit } from '@angular/core';
+import { NavbarService } from 'src/app/services/navbarservices/navbar.service';
+import { SidebarService } from 'src/app/services/sidebarservices/sidebar.service';
 
 @Component({
   selector: 'app-orders',
@@ -13,9 +15,15 @@ export class OrdersComponent implements OnInit {
   Pendingjobs: Jobs[];
   page: Number = 1;
   total: Number;
-  constructor(private jobServ: JobsService) {}
+  constructor(
+    private jobServ: JobsService,
+    public nav: NavbarService,
+    public side: SidebarService
+  ) {}
 
   ngOnInit(): void {
+    this.nav.show();
+    this.side.show();
     this.jobServ.getJobs().subscribe(
       (res) =>
         (this.jobs = res.map((e) => {

@@ -11,6 +11,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/authservices/auth.service';
 import { firebase } from '@firebase/app';
 import { AdminsService } from 'src/app/services/adminsservices/admins.service';
+import { NavbarService } from 'src/app/services/navbarservices/navbar.service';
+import { SidebarService } from 'src/app/services/sidebarservices/sidebar.service';
 
 @Component({
   selector: 'app-resetpassform',
@@ -26,18 +28,31 @@ export class ResetpassformComponent implements OnInit, AfterViewInit {
   constructor(
     public afAuth: AngularFireAuth,
     private afs: AngularFirestore,
-    public adminService:  AdminsService,
+    public adminService: AdminsService,
     private cdr: ChangeDetectorRef,
     public Auth: AuthService,
     public formBuilder: FormBuilder,
     private act: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    public Nav: NavbarService,
+    public side: SidebarService
   ) {
     this.editForm = this.formBuilder.group({
-      password: ['',[Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$')]],
+      password: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(
+            '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$'
+          ),
+        ],
+      ],
     });
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.Nav.hide();
+    this.side.hide();
+  }
 
   ngAfterViewInit(): void {}
 
@@ -60,7 +75,7 @@ export class ResetpassformComponent implements OnInit, AfterViewInit {
         });
       });
   }
-  onSubmit(){}
+  onSubmit() {}
 
   toggleFieldTextType() {
     this.fieldTextType = !this.fieldTextType;

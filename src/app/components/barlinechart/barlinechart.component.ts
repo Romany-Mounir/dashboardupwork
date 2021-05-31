@@ -10,14 +10,22 @@ import { JobsService } from 'src/app/services/jobs.service';
   styleUrls: ['./barlinechart.component.css'],
 })
 export class BarlinechartComponent {
-  publicJobs: Jobs[];
-  closedJobs: Jobs[];
-  hiredJobs: Jobs[];
-  closedjobsnum: number;
-  hiredjobsnum: number;
-  publicjobsnum: number;
-  alljobs: number[];
-  constructor(private jobservice: JobsService) {}
+  publicJobsLength: number;
+  hiredJobsLength: number;
+  closedJobsLength: number;
+  constructor(private jobservice: JobsService) {
+    this.jobservice.getJobsHired().subscribe((res) => {
+      this.hiredJobsLength = res.length;
+      console.log(this.hiredJobsLength);
+    });
+
+    this.jobservice.getJobsClosed().subscribe((res) => {
+      this.closedJobsLength = res.length;
+    });
+    this.jobservice.getJobsPublic().subscribe((res) => {
+      this.publicJobsLength = res.length;
+    });
+  }
   barChartOptions: ChartOptions = {
     responsive: true,
     scales: { xAxes: [{}], yAxes: [{}] },
@@ -27,45 +35,10 @@ export class BarlinechartComponent {
   barChartLegend = true;
   barChartPlugins = [];
 
-  ngOnInit() {
-    this.jobservice.getJobsHired().subscribe(
-      (res) =>
-        (this.hiredJobs = res.map((e) => {
-          console.log(e.payload.doc.data());
-          return {
-            ...(e.payload.doc.data() as object),
-          } as Jobs;
-        }))
-    );
-
-    this.jobservice.getJobsPublic().subscribe(
-      (res) =>
-        (this.publicJobs = res.map((e) => {
-          console.log(e.payload.doc.data());
-          return {
-            ...(e.payload.doc.data() as object),
-          } as Jobs;
-        }))
-    );
-
-    this.jobservice.getJobsClosed().subscribe(
-      (res) =>
-        (this.closedJobs = res.map((e) => {
-          console.log(e.payload.doc.data());
-          return {
-            ...(e.payload.doc.data() as object),
-          } as Jobs;
-        }))
-    );
-    //  this.closedjobsnum = this.closedJobs.length;
-    // this.hiredjobsnum = this.hiredJobs.length;
-    //this.publicjobsnum = this.publicJobs.length;
-    //console.log(this.publicjobsnum);
-    //this.alljobs = [this.publicjobsnum, this.hiredjobsnum, this.closedjobsnum];
-  }
+  ngOnInit() {}
 
   barChartData: ChartDataSets[] = [
-    { data: [8, 12, 18], label: 'Jobs Dataset' },
+    { data: [10, 15, 18], label: 'Jobs Dataset' },
     // { data: [280, 480, 400, 790, 960, 887, 140], label: 'Dataset2' }
   ];
 

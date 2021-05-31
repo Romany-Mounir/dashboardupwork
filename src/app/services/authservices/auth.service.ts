@@ -1,11 +1,9 @@
-import { getModuleFactory, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { ActivatedRoute, Router } from '@angular/router';
 import { firebase } from '@firebase/app';
 import '@firebase/auth';
-import {
-  AngularFirestore,
-} from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { AdminsService } from '../adminsservices/admins.service';
 
 @Injectable({
@@ -13,16 +11,15 @@ import { AdminsService } from '../adminsservices/admins.service';
 })
 export class AuthService {
   userData: any;
-  public errormsg :string;
-  public errormsg2 :string;
-  public errormsg3 : string;
+  public errormsg: string;
+  public errormsg2: string;
+  public errormsg3: string;
 
   constructor(
     private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
     private router: Router,
-    private addadmin: AdminsService,
-    
+    private addadmin: AdminsService
   ) {}
 
   // Sign up with email/password
@@ -32,9 +29,9 @@ export class AuthService {
       .then((result) => {
         this.addadmin.createAdmin({ ...data, uid: result.user.uid });
       })
-       .catch((error) => {
-        this.errormsg= error.message;
-       // window.alert(error.message);
+      .catch((error) => {
+        this.errormsg = error.message;
+        window.alert(error.message);
       });
   }
 
@@ -52,7 +49,7 @@ export class AuthService {
                 console.log(doc.data());
                 console.log(doc.id);
                 localStorage.setItem('user', JSON.stringify(doc.data()));
-                localStorage.setItem('doc',JSON.stringify(doc.id));
+                localStorage.setItem('doc', JSON.stringify(doc.id));
                 window.location.reload();
               }
             });
@@ -60,8 +57,8 @@ export class AuthService {
         this.router.navigate(['/myprofile']);
       })
       .catch((error) => {
-        this.errormsg2=error.message;
-        //window.alert(error.message);
+        this.errormsg2 = error.message;
+        window.alert(error.message);
         //console.log(error.message);
       });
   }
@@ -74,24 +71,32 @@ export class AuthService {
         this.router.navigate(['/restform']);
       })
       .catch((error) => {
-        this.errormsg3=error.message;
-        //window.alert(error);
+        this.errormsg3 = error.message;
+        window.alert(error);
       });
   }
 
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
-    return user !== null && user.emailVerified !== false ? true : false;
+    return user !== null ? true : false;
   }
 
   SignOut() {
+    // var user = firebase.auth().currentUser;
+    // user
+    //   .delete()
+    //   .then(function () {
+    //     // User deleted. Redirect to login page...
+    //     this.router.navigate(['signin']);
+    //     localStorage.removeItem('user');
+    //   })
+    //   .catch(function (error) {
+    //     window.alert(error);
+    //   });
+
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem('user');
       this.router.navigate(['signin']);
     });
   }
-  
-
-  
-
 }

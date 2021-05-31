@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Talent } from 'src/app/models/talent.model';
+import { NavbarService } from 'src/app/services/navbarservices/navbar.service';
+import { SidebarService } from 'src/app/services/sidebarservices/sidebar.service';
 import { TalentService } from 'src/app/services/talent.service';
 
 @Component({
@@ -14,10 +16,13 @@ export class TalentRequestsComponent implements OnInit {
   total: Number;
   constructor(
     private talentService: TalentService,
-    private angularFirestore: AngularFirestore
+    private angularFirestore: AngularFirestore,
+    public nav: NavbarService,
+    public side: SidebarService
   ) {}
-
   ngOnInit(): void {
+    this.nav.show();
+    this.side.show();
     this.talentService.getTalentRequestsList().subscribe((res) => {
       this.talents = res.map((e) => {
         return {

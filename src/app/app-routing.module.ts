@@ -22,7 +22,8 @@ import { EditclientComponent } from './pages/editclient/editclient.component';
 import { EdittalentComponent } from './pages/edittalent/edittalent.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/overview', pathMatch: 'full' },
+  //{ path: '', redirectTo: '/overview', pathMatch: 'full' },
+  { path: '', redirectTo: '/signin', pathMatch: 'full' },
   { path: 'overview', component: OverviewComponent, canActivate: [AuthGuard] },
   { path: 'orders', component: OrdersComponent, canActivate: [AuthGuard] },
   { path: 'charts', component: ChartsComponent, canActivate: [AuthGuard] },

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ClientService } from 'src/app/services/client.service';
+import { NavbarService } from 'src/app/services/navbarservices/navbar.service';
+import { SidebarService } from 'src/app/services/sidebarservices/sidebar.service';
 
 @Component({
   selector: 'app-editclient',
@@ -16,7 +18,9 @@ export class EditclientComponent implements OnInit {
     public clientService: ClientService,
     public formBuilder: FormBuilder,
     private act: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    public nav: NavbarService,
+    public side: SidebarService
   ) {
     this.editForm1 = this.formBuilder.group({
       firstName: [
@@ -40,8 +44,9 @@ export class EditclientComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.nav.hide();
+    this.side.hide();
     const id = this.act.snapshot.paramMap.get('id');
-    console.log(id);
     this.clientService.getClientDoc(id).subscribe((res) => {
       this.adminRef = res;
       console.log(res);
