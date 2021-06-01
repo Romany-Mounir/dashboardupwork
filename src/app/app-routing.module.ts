@@ -43,7 +43,11 @@ const routes: Routes = [
     component: NotificationsComponent,
     canActivate: [AuthGuard],
   },
-  { path: 'resetpassword', component: ResetPaswordComponent },
+  {
+    path: 'resetpassword',
+    component: ResetPaswordComponent,
+    canActivate: [AuthGuard],
+  },
   { path: 'signin', component: SigninComponent, canActivate: [LoginGuard] },
   {
     path: 'myaccount',
