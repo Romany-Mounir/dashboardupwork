@@ -7,11 +7,11 @@ export class SidebarService {
   visible: boolean;
 
   constructor() {
-    this.visible = false;
+    this.visible = true;
   }
 
   hide() {
-    this.visible = false;
+    this.visible = true;
   }
 
   show() {
