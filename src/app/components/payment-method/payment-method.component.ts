@@ -16,7 +16,8 @@ export class PaymentMethodComponent implements OnInit {
   ngOnInit() {
     this.adminService.getAdminList().subscribe(res => {
       const localUser=firebase.auth().currentUser.uid;
-      console.log(localUser);
+
+     // console.log(localUser);
       this.Admins= res.map( e => {
         return {
           id: e.payload.doc.id,
@@ -24,7 +25,7 @@ export class PaymentMethodComponent implements OnInit {
         } as Admins;
       
       });
-      console.log(this.Admins[0].id);
+     this.Admins.map(e=>this.ids=e.id);
 
     });    
  

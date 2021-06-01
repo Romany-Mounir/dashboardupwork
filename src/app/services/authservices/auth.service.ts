@@ -5,6 +5,7 @@ import { firebase } from '@firebase/app';
 import '@firebase/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AdminsService } from '../adminsservices/admins.service';
+import { auth } from 'firebase';
 
 @Injectable({
   providedIn: 'root',
@@ -27,7 +28,7 @@ export class AuthService {
     return this.afAuth
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {
-        this.addadmin.createAdmin({ ...data, uid: result.user.uid });
+        this.addadmin.createAdmin({ ...data, id: result.user.uid });
       })
       .catch((error) => {
         this.errormsg = error.message;
@@ -45,16 +46,15 @@ export class AuthService {
           .get()
           .subscribe((docs) => {
             docs.forEach((doc) => {
-              if (doc.data().uid === firebase.auth().currentUser.uid) {
-                console.log(doc.data());
-                console.log(doc.id);
+              if (doc.data().id === firebase.auth().currentUser.uid && doc.data().userType==='admin') {
                 localStorage.setItem('user', JSON.stringify(doc.data()));
                 localStorage.setItem('doc', JSON.stringify(doc.id));
-                window.location.reload();
+                this.router.navigate(['/myprofile']);
+                // window.location.reload();
               }
             });
           });
-        this.router.navigate(['/myprofile']);
+          
       })
       .catch((error) => {
         this.errormsg2 = error.message;
@@ -77,26 +77,15 @@ export class AuthService {
   }
 
   get isLoggedIn(): boolean {
-    const user = JSON.parse(localStorage.getItem('user'));
+    const user =localStorage.getItem('user');
     return user !== null ? true : false;
   }
 
   SignOut() {
-    // var user = firebase.auth().currentUser;
-    // user
-    //   .delete()
-    //   .then(function () {
-    //     // User deleted. Redirect to login page...
-    //     this.router.navigate(['signin']);
-    //     localStorage.removeItem('user');
-    //   })
-    //   .catch(function (error) {
-    //     window.alert(error);
-    //   });
-
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem('user');
       this.router.navigate(['signin']);
-    });
+    }).catch(e=>console.log(e))
+    ;
   }
 }

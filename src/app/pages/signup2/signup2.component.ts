@@ -77,6 +77,7 @@ export class Signup2Component implements OnInit {
       phone: this.adminForm.get('phone').value,
       password: this.adminForm.get('password').value,
       imgProfile: this.fb,
+      userType:'admin',
     };
     this.AuthenticationService.SignUp(email, pass, data);
     this.errormsg = this.AuthenticationService.errormsg;

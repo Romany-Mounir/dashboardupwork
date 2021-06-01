@@ -280,7 +280,7 @@
               aria-expanded="false"
               ><img
                 class="avatar"
-                src="{{ adminRef?.imgProfile }}"
+                src="{{adminRef?.imgProfile}}"
                 alt="user profile"
             /></a>
             <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
@@ -294,7 +294,7 @@
                 <hr class="dropdown-divider" />
               </li>
               <li>
-                <a class="dropdown-item" (click)="authService.SignOut()"
+                <a class="dropdown-item btn"  (click)="signOut()"
                   >Log Out</a
                 >
               </li>

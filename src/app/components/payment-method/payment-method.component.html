@@ -80,7 +80,7 @@
             <td class="stat-cell">
               <div class="text-left">
                 <a
-                  *ngIf="admin.id == localUser"
+                  *ngIf="admin.id !== localUser"
                   class="btn-sm app-btn-secondary text-danger"
                   (click)="removeAdmin(admin)"
                   >Delete</a
