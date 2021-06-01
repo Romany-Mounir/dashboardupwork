@@ -10,6 +10,7 @@ import { AdminsService } from 'src/app/services/adminsservices/admins.service';
 })
 export class PaymentMethodComponent implements OnInit {  
   Admins: Admins[];
+  public ids;
   constructor(private adminService:  AdminsService) { }
 
   ngOnInit() {
@@ -21,8 +22,12 @@ export class PaymentMethodComponent implements OnInit {
           id: e.payload.doc.id,
           ...(e.payload.doc.data() as object)
         } as Admins;
-      })
+      
+      });
+      console.log(this.Admins[0].id);
+
     });    
+ 
   }
   removeAdmin = admin => this.adminService.deleteAdmin(admin);
 }

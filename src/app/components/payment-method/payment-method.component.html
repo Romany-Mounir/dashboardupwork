@@ -1,5 +1,11 @@
 <div
-  class="app-card app-card-account shadow-sm d-flex flex-column align-items-start"
+  class="
+    app-card app-card-account
+    shadow-sm
+    d-flex
+    flex-column
+    align-items-start
+  "
 >
   <div class="app-card-header p-3 border-bottom-0">
     <div class="row align-items-center gx-3">
@@ -53,7 +59,9 @@
             <td>
               <a href="#">{{ admin.name }}</a>
             </td>
-            <td><img src={{admin.imgProfile}} class="avatar" alt="Avatar"></td>
+            <td>
+              <img src="{{ admin.imgProfile }}" class="avatar" alt="Avatar" />
+            </td>
             <td>
               <a href="#">{{ admin.email }}</a>
             </td>
@@ -72,6 +80,7 @@
             <td class="stat-cell">
               <div class="text-left">
                 <a
+                  *ngIf="admin.id == localUser"
                   class="btn-sm app-btn-secondary text-danger"
                   (click)="removeAdmin(admin)"
                   >Delete</a
@@ -86,9 +95,8 @@
   </div>
 
   <div class="app-card-footer p-4 mt-auto">
-    <a class="btn app-btn-secondary" routerLink="/create" >Add Admin</a>
-   </div>
-  
+    <a class="btn app-btn-secondary" routerLink="/create">Add Admin</a>
+  </div>
 
   <!--//app-card-footer-->
 </div>

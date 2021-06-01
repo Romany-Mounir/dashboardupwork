@@ -13,7 +13,9 @@ export class TalentService {
   }
 
   getTalentList() {
-    return this.angularFirestore.collection('talent').snapshotChanges();
+    return this.angularFirestore
+      .collection('talent', (ref) => ref.where('accepted', '==', true))
+      .snapshotChanges();
   }
 
   createTalent(talent: Talent) {
@@ -30,20 +32,25 @@ export class TalentService {
     });
   }
 
+  getTalentRequestsList() {
+    return this.angularFirestore
+      .collection('talent', (ref) => ref.where('accepted', '==', false))
+      .snapshotChanges();
+  }
+
   deleteTalent(talent) {
     return this.angularFirestore.collection('talent').doc(talent.id).delete();
   }
 
   updateTalent(talent: Talent, id) {
-    return this.angularFirestore
-      .collection('talent')
-      .doc(id)
-      .update({
-        name: talent.firstName + ' ' + talent.lastName,
-        location: talent.location,
-        category: talent.jobCategory,
-        //connects: talent.connects,
-        //earning: talent.earning
-      });
+    return this.angularFirestore.collection('talent').doc(id).update({
+      firstName: talent.firstName,
+      lastName: talent.lastName,
+      password: talent.password,
+      // location: talent.location,
+      // category: talent.jobCategory,
+      //connects: talent.connects,
+      //earning: talent.earning
+    });
   }
 }

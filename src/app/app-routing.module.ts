@@ -16,21 +16,35 @@ import { SettingsComponent } from './pages/settings/settings.component';
 import { SpecialaccountComponent } from './pages/specialaccount/specialaccount.component';
 import { ResetpassformComponent } from './pages/resetpassform/resetpassform.component';
 import { TalentListComponent } from './pages/talent-list/talent-list.component';
-
+import { TalentRequestsComponent } from './pages/talent-requests/talent-requests.component';
+import { LoginGuard } from './login.guard';
+import { EditclientComponent } from './pages/editclient/editclient.component';
+import { EdittalentComponent } from './pages/edittalent/edittalent.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/overview', pathMatch: 'full' },
+  //{ path: '', redirectTo: '/overview', pathMatch: 'full' },
+  { path: '', redirectTo: '/signin', pathMatch: 'full' },
   { path: 'overview', component: OverviewComponent, canActivate: [AuthGuard] },
   { path: 'orders', component: OrdersComponent, canActivate: [AuthGuard] },
   { path: 'charts', component: ChartsComponent, canActivate: [AuthGuard] },
   { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard] },
+  {
+    path: 'update-client/:id',
+    component: EditclientComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'update-talent/:id',
+    component: EdittalentComponent,
+    canActivate: [AuthGuard],
+  },
   {
     path: 'notifications',
     component: NotificationsComponent,
     canActivate: [AuthGuard],
   },
   { path: 'resetpassword', component: ResetPaswordComponent },
-  { path: 'signin', component: SigninComponent },
+  { path: 'signin', component: SigninComponent, canActivate: [LoginGuard] },
   {
     path: 'myaccount',
     component: SpecialaccountComponent,
@@ -38,13 +52,45 @@ const routes: Routes = [
   },
   { path: 'help', component: HelpComponent, canActivate: [AuthGuard] },
   { path: '404error', component: ErrorPageComponent },
-  { path: 'create', component: Signup2Component },
-  { path: 'list-admins', component:  SpecialaccountComponent },
-  { path: 'update-admin/:id', component: SignupComponent },
-  { path: 'myprofile', component: SpecialaccountComponent },
-  { path: 'restform', component: ResetpassformComponent },
-  {path:'clientlist',component:ClientListComponent,canActivate:[AuthGuard]},
-  {path:'talentlist',component:TalentListComponent,canActivate:[AuthGuard]},
+  { path: 'create', component: Signup2Component, canActivate: [AuthGuard] },
+  {
+    path: 'list-admins',
+    component: SpecialaccountComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'update-admin/:id',
+    component: SignupComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'myprofile',
+    component: SpecialaccountComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'restform',
+    component: ResetpassformComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'clientlist',
+    component: ClientListComponent,
+    canActivate: [AuthGuard],
+  },
+
+  {
+    path: 'talentlist',
+    component: TalentListComponent,
+    canActivate: [AuthGuard],
+  },
+
+  {
+    path: 'talentrequests',
+    component: TalentRequestsComponent,
+    canActivate: [AuthGuard],
+  },
+
   { path: '**', redirectTo: '/404error' },
 ];
 

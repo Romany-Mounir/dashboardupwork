@@ -10,11 +10,15 @@ import { AuthService } from '../../../services/authservices/auth.service';
 })
 export class SigninComponent implements OnInit {
   public loginForm: FormGroup;
+  public fieldTextType: boolean;
+  public errormsg:string;
+  
   constructor(private router: Router, public AuthenticationService: AuthService,public formBuilder: FormBuilder) { 
     this.loginForm = this.formBuilder.group({
       email: ['',[Validators.required,Validators.email]],
-      password: ['',[Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$')]],
+      password: [''],
     })      
+  
   }
   
   ngOnInit(): void {
@@ -24,7 +28,11 @@ export class SigninComponent implements OnInit {
     var email=this.loginForm.get('email').value;
     var pass=this.loginForm.get('password').value;
      this.AuthenticationService.SignIn(email,pass);
+     this.errormsg=this.AuthenticationService.errormsg2;
    }
 
-
+   
+   toggleFieldTextType() {
+    this.fieldTextType = !this.fieldTextType;
+  }
 }

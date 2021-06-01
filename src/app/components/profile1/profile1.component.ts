@@ -1,8 +1,4 @@
-import {
-  AfterViewInit,
-  Component,
-  OnInit,
-} from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AuthService } from 'src/app/services/authservices/auth.service';
@@ -19,16 +15,16 @@ export class Profile1Component implements OnInit, AfterViewInit {
   constructor(
     public afAuth: AngularFireAuth,
     private db: AngularFirestore,
-    public adminService:  AdminsService,
-    private auth: AuthService,
+    public adminService: AdminsService,
+    private auth: AuthService
   ) {}
- 
+
   ngAfterViewInit(): void {}
 
   ngOnInit(): void {
     this.adminRef = JSON.parse(localStorage.getItem('user'));
     //console.log(this.adminRef);
-    this.iddoc= JSON.parse(localStorage.getItem('doc'));
+    this.iddoc = JSON.parse(localStorage.getItem('doc'));
     //console.log(this.iddoc+"==========");
   }
 }

@@ -1,13 +1,4 @@
-<div
-  class="app-header-inner"
-
->
-<!-- *ngIf="
-router.url !== '/signin' &&
-router.url !== '/signup' &&
-router.url !== '/resetpassword' &&
-router.url !== '/404error'
-" -->
+<div class="app-header-inner" *ngIf="nav.visible">
   <div class="container-fluid py-2">
     <div class="app-header-content">
       <div class="row justify-content-between align-items-center">
@@ -70,7 +61,6 @@ router.url !== '/404error'
               aria-expanded="false"
               title="Notifications"
             >
-              <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
               <svg
                 width="1em"
                 height="1em"
@@ -87,7 +77,6 @@ router.url !== '/404error'
               </svg>
               <span class="icon-badge">3</span>
             </a>
-            <!--//dropdown-toggle-->
 
             <div
               class="dropdown-menu p-0"
@@ -254,13 +243,12 @@ router.url !== '/404error'
           </div>
           <!--//app-utility-item-->
 
-          <div class="app-utility-item">
+          <!-- <div class="app-utility-item">
             <a
               routerLink="/settings"
               routerLinkActive="active"
               title="Settings"
             >
-              <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
               <svg
                 width="1em"
                 height="1em"
@@ -279,7 +267,7 @@ router.url !== '/404error'
                 />
               </svg>
             </a>
-          </div>
+          </div> -->
           <!--//app-utility-item-->
 
           <div class="app-utility-item app-user-dropdown dropdown">
@@ -290,20 +278,25 @@ router.url !== '/404error'
               href="#"
               role="button"
               aria-expanded="false"
-              ><img class="avatar" src={{adminRef?.imgProfile}} alt="user profile"
+              ><img
+                class="avatar"
+                src="{{ adminRef?.imgProfile }}"
+                alt="user profile"
             /></a>
             <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
               <li>
                 <a class="dropdown-item" routerLink="/myaccount">Account</a>
               </li>
-              <li>
+              <!-- <li>
                 <a class="dropdown-item" routerLink="/settings">Settings</a>
-              </li>
+              </li> -->
               <li>
                 <hr class="dropdown-divider" />
               </li>
               <li>
-                <a class="dropdown-item"  (click)="authService.SignOut()" >Log Out</a >
+                <a class="dropdown-item" (click)="authService.SignOut()"
+                  >Log Out</a
+                >
               </li>
             </ul>
           </div>
