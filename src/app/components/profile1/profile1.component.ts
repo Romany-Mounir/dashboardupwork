@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AuthService } from 'src/app/services/authservices/auth.service';
 import { AdminsService } from 'src/app/services/adminsservices/admins.service';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-profile1',

@@ -39,7 +39,7 @@ export class BarlinechartComponent {
 
   barChartData: ChartDataSets[] = [
     // { data: [10, 15, 18], label: 'Jobs Dataset' },
-    { data: [280, 480, 400, 790, 960, 887, 140], label: 'Dataset2' }
+    { data: [11, 7, 5, 0], label: 'Jobs Dateset' },
   ];
 
   barChartColors: Color[] = [
