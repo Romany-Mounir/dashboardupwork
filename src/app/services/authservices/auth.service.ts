@@ -28,7 +28,7 @@ export class AuthService {
     return this.afAuth
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {
-        this.addadmin.createAdmin({ ...data, id: result.user.uid });
+        this.addadmin.createAdmin({ ...data, uid: result.user.uid });
       })
       .catch((error) => {
         this.errormsg = error.message;
@@ -46,7 +46,10 @@ export class AuthService {
           .get()
           .subscribe((docs) => {
             docs.forEach((doc) => {
-              if (doc.data().id === firebase.auth().currentUser.uid && doc.data().userType==='admin') {
+              if (
+                doc.data().uid === firebase.auth().currentUser.uid &&
+                doc.data().userType === 'admin'
+              ) {
                 localStorage.setItem('user', JSON.stringify(doc.data()));
                 localStorage.setItem('doc', JSON.stringify(doc.id));
                 this.router.navigate(['/myprofile']);
@@ -54,7 +57,6 @@ export class AuthService {
               }
             });
           });
-          
       })
       .catch((error) => {
         this.errormsg2 = error.message;
@@ -71,21 +73,23 @@ export class AuthService {
         this.router.navigate(['/restform']);
       })
       .catch((error) => {
-        this.errormsg3 = error.message;
+        //this.errormsg3 = error.message;
         window.alert(error);
       });
   }
 
   get isLoggedIn(): boolean {
-    const user =localStorage.getItem('user');
+    const user = localStorage.getItem('user');
     return user !== null ? true : false;
   }
 
   SignOut() {
-    return this.afAuth.signOut().then(() => {
-      localStorage.removeItem('user');
-      this.router.navigate(['signin']);
-    }).catch(e=>console.log(e))
-    ;
+    return this.afAuth
+      .signOut()
+      .then(() => {
+        localStorage.removeItem('user');
+        this.router.navigate(['signin']);
+      })
+      .catch((e) => console.log(e));
   }
 }
